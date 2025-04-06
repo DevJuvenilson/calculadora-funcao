@@ -1,6 +1,7 @@
 import './styles.css';
 import FormulaRender from '../../services/FormulaRender';
 import { useState } from 'react';
+import DesmosGraph from '../../components/DesmosGraph/DesmosGraph';
 
 function App() {
 
@@ -18,20 +19,19 @@ function App() {
                             <h1>CALCULADORA</h1>
                         </header>
 
-                        <label htmlFor="formulas">Escolha a fórmula:</label>
+                        <label htmlFor="formulas">ESCOLHA A FÓRMULA</label>
                         <select name="formulas" id="formulas" onChange={handleFormulaChange}>
                             <option value="funcaoSegundoGrau">Função do segundo grau</option>
                             <option value="funcaoPrimeiroGrau">Função do primeiro grau</option>
                             <option value="cicloTrigonometrico">Ciclo trigonométrico</option>
+                            <option value="funcaoLogaritmica">Função logarítmica</option>
                         </select>
 
                         <FormulaRender formula={formula} />
                     </div>
 
                     <div className="conteudo-direito">
-                        <header>
-                            <h1>GRÁFICO</h1>
-                        </header>
+                        <DesmosGraph />
                     </div>
                 </div>
             </div>

@@ -1,0 +1,86 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.formula{
+    font-family:'Times New Roman', Times, serif;
+    max-width: 100%;
+    font-size: 1.5em;
+    margin: 10px auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+label{
+    color: #333;
+    margin: 10px 0px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.valores{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    width: 100%;
+}
+
+#a, #b, #c{
+    width: 160px;
+    padding: 7px;
+    margin: 0px 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.resultados{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#delta, #solucao, #xVertice, #yVertice {
+    width: 120px;
+    padding: 7px;
+    margin: 0px 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .valores, .resultados{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #a, #b, #c, #delta, #solucao, #xVertice, #yVertice{
+        width: 100%;
+        margin: 5px 0px;
+    }
+}

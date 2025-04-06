@@ -1,0 +1,12 @@
+.desmosContainer {
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .desmosContainer {
+        width: 100%;
+        height: 400px;
+    }
+}

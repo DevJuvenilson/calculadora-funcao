@@ -1,9 +1,11 @@
 import FuncaoSegundoGrau from "../components/FuncaoSegundoGrau/index.jsx";
 
-export default function FormulaRender(formula) {
+const formulasMap = {
+    funcaoSegundoGrau: <FuncaoSegundoGrau />,
+    // funcaoPrimeiroGrau: <FuncaoPrimeiroGrau />,
+    // cicloTrigonometrico: <CicloTrigonometrico />,
+};
 
-    console.log(formula);
-    if (formula === 'funcaoSegundoGrau') {
-        return <FuncaoSegundoGrau />;
-    }
+export default function FormulaRender({ formula }) {
+    return formulasMap[formula] || null;
 }
