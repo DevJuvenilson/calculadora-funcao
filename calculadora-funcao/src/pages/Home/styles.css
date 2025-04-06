@@ -1,0 +1,58 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+.background {
+    background: url(../../assets/img/fundo-texturizado-azul.png) no-repeat center center fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@media (max-width: 600px) {
+    .background {
+        height: auto;
+    }
+}
+
+.container {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 20px;
+    border-radius: 8px;
+    width: auto;
+    max-width: 1250px;
+    box-sizing: border-box;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+.conteudo-esquerdo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 605px;
+    padding: 20px;
+}
+
+.conteudo-direito{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 605px;
+    padding: 20px;
+}
