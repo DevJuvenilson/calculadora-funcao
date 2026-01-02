@@ -32,7 +32,28 @@ html {
     height: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.conteudo-esquerdo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 605px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin: 0px 10px;
+}
+
+.conteudo-direito {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -48,32 +69,17 @@ html {
     .conteudo-direito {
         max-width: 100%;
         width: 100%;
-        padding: 10px;
+        padding: 20px;
         box-sizing: border-box;
+    }
+
+    .conteudo-direito {
+        padding: 0px;
+        margin-top: 20px;
     }
 }
 
-.conteudo-esquerdo {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 605px;
-    padding: 15px;
-    box-sizing: border-box;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    margin: 0px 10px;
-}
-
-.conteudo-direito {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 605px;
-    padding: 5px;
-    box-sizing: border-box;
-}
-
+/* TITLE "CALCULADORA" */
 .conteudo-esquerdo h1 {
     font-size: 2.5rem;
     color: #333;

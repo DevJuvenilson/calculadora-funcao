@@ -5,7 +5,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="number"] {
-    -moz-appearance: textfield;
     border: none;
     padding: 7px;
     border-radius: 5px;
@@ -15,7 +14,7 @@ input[type="number"] {
     font-family:'Times New Roman', Times, serif;
     max-width: 100%;
     font-size: 1.5em;
-    margin: 10px auto;
+    margin: 30px auto;
     text-align: center;
     box-sizing: border-box;
 }
@@ -39,11 +38,12 @@ label{
 }
 
 #a, #b, #c{
-    width: 160px;
+    width: 100%;
     padding: 7px;
     margin: 0px 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     font-weight: bold;
@@ -57,16 +57,17 @@ label{
     align-items: center;
     margin: 10px auto;
     box-sizing: border-box;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     width: 100%;
 }
 
 #delta, #solucao, #xVertice, #yVertice {
-    width: 120px;
+    width: 100%;
     padding: 7px;
     margin: 0px 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     font-weight: bold;
@@ -82,5 +83,9 @@ label{
     #a, #b, #c, #delta, #solucao, #xVertice, #yVertice{
         width: 100%;
         margin: 5px 0px;
+    }
+
+    #delta, #solucao, #xVertice, #yVertice{
+        font-size: 20px;
     }
 }

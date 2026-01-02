@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão de Copiar</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #textoParaCopiar { width: 80%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; border-radius: 4px; }
+        button:hover { background-color: #0056b3; }
+        #status { margin-top: 10px; color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Botão de Copiar com JavaScript</h1>
+
+    <!-- 1. Elemento com o texto que será copiado -->
+    <input type="text" id="textoParaCopiar" value="Este é o texto para copiar!">
+
+    <!-- 2. O botão que chamará a função -->
+    <button id="botaoCopiar">Copiar Texto</button>
+
+    <!-- 3. Mensagem de status (opcional) -->
+    <div id="status"></div>
+
+    <script>
+        // 1. Selecionar os elementos
+        const inputTexto = document.getElementById('textoParaCopiar');
+        const botaoCopiar = document.getElementById('botaoCopiar');
+        const statusDiv = document.getElementById('status');
+
+        // 2. Adicionar um Event Listener para o clique no botão
+        botaoCopiar.addEventListener('click', async () => {
+            try {
+                // 3. Obter o texto do input
+                const texto = inputTexto.value;
+
+                // 4. Usar a API Clipboard para copiar o texto (Assíncrono)
+                await navigator.clipboard.writeText(texto);
+
+                // 5. Atualizar a mensagem de status
+                statusDiv.textContent = 'Texto copiado com sucesso!';
+                console.log('Texto copiado:', texto);
+
+                // Limpar mensagem após alguns segundos (opcional)
+                setTimeout(() => {
+                    statusDiv.textContent = '';
+                }, 2000);
+
+            } catch (err) {
+                // 5. Tratar erros (ex: permissão negada, navegador não suporta)
+                statusDiv.textContent = 'Erro ao copiar o texto.';
+                console.error('Falha ao copiar:', err);
+            }
+        });
+    </script>
+
+</body>
+</html>
