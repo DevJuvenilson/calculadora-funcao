@@ -37,6 +37,11 @@ export default function FuncaoSegundoGrau() {
             alert("Por favor, insira todos os valores corretamente.");
             return;
         }
+
+        if (aNum === 0) {
+            alert("O coeficiente 'a' não pode ser zero.");
+            return;
+        }
     
         const deltaCalc = bNum * bNum - 4 * aNum * cNum;
         setDelta(deltaCalc);

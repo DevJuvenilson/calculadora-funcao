@@ -1,8 +1,9 @@
-import FuncaoSegundoGrau from "../components/FuncaoSegundoGrau/index.jsx";
+import FuncaoSegundoGrau from "../components/FuncaoSegundoGrau/index.jsx"; 
+import FuncaoPrimeiroGrau from "../components/FuncaoPrimeiroGrau/index.jsx"; 
 
 const formulasMap = {
     funcaoSegundoGrau: <FuncaoSegundoGrau />,
-    // funcaoPrimeiroGrau: <FuncaoPrimeiroGrau />,
+    funcaoPrimeiroGrau: <FuncaoPrimeiroGrau />,
     // cicloTrigonometrico: <CicloTrigonometrico />,
 };
 
