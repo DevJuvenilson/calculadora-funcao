@@ -1,8 +1,12 @@
 import './styles.css';
 import '../BotaoCalcular/styles.css';
 import { useState } from 'react';
+import { useRef } from 'react';
+import CopyButton from '../CopyButton';
 
 export default function FuncaoSegundoGrau() {
+    const paragrafoRef = useRef(null);
+
     const [a, setA] = useState('');
     const [b, setB] = useState('');
     const [c, setC] = useState('');
@@ -57,8 +61,11 @@ export default function FuncaoSegundoGrau() {
     return (
         <div className="funcao-segundo-grau">
             <header>
-                <p className='formula'>f(x) = {a || 'a'}x² + {b || 'b'}x + {c || 'c'}</p>
+                <p ref={paragrafoRef} className='formula'>f(x) = {a || 'a'}x² + {b || 'b'}x + {c || 'c'}</p>
             </header>
+            
+            <CopyButton targetRef={paragrafoRef} />
+
             <div className="formulario">
 
                 <label className='label'>INSIRA OS VALORES</label>
