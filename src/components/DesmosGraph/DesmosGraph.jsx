@@ -6,14 +6,22 @@ export default function DesmosGraph() {
     const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            if (window.Desmos) {
-                setIsReady(true);
-                clearInterval(interval);
-            }
-        }, 100);
+        if (window.Desmos) {
+            setIsReady(true);
+            return;
+        }
 
-        return () => clearInterval(interval);
+        const script = document.createElement('script');
+        script.src = `https://www.desmos.com/api/v1.8/calculator.js?apiKey=${process.env.REACT_APP_DESMOS_API_KEY}`;
+        script.onload = () => setIsReady(true);
+        document.head.appendChild(script);
+
+        return () => {
+            // Optionally remove the script if component unmounts
+            if (document.head.contains(script)) {
+                document.head.removeChild(script);
+            }
+        };
     }, []);
 
     useEffect(() => {
