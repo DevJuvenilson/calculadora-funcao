@@ -78,10 +78,10 @@ export default function FuncaoCossenoidal() {
 
                 <label className='label'>RESULTADOS</label>
                 <div className='resultados'>
-                    <Tooltip text="Intervalo de valores que a função pode assumir." position="top">
+                    <Tooltip text="Imagem: Intervalo de valores que a função pode assumir." position="top">
                         <input type="text" id="imagem" className='valorImagem' placeholder='Im = [ ]' value={"Im = " + imagem} disabled />
                     </Tooltip>
-                    <Tooltip text="Comprimento do intervalo no qual a função se repete." position="top">
+                    <Tooltip text="Período: Comprimento do intervalo no qual a função se repete." position="top">
                         <input type="text" id="periodo" className='valorPeriodo' placeholder='T' value={"T = " + periodo} disabled />
                     </Tooltip>
                 </div>
