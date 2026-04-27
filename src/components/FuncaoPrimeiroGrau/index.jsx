@@ -3,6 +3,7 @@ import '../BotaoCalcular/styles.css';
 import { useState } from 'react';
 import { useRef } from 'react';
 import CopyButton from '../CopyButton';
+import Tooltip from '../Tooltip';
 
 export default function FuncaoPrimeiroGrau() {
     const paragrafoRef = useRef(null);
@@ -62,9 +63,15 @@ export default function FuncaoPrimeiroGrau() {
 
                 <label className='label'>RESULTADOS</label>
                 <div className='resultados'>
-                    <input type="text" id="raiz" className='valorRaiz' placeholder='Raiz' value={raiz} disabled />
-                    <input type="text" id="coeficienteAngular" className='valorCoeficienteAngular' placeholder='Coef. Angular' value={"a = " + coeficienteAngular} disabled />
-                    <input type="text" id="coeficienteLinear" className='valorCoeficienteLinear' placeholder='Coef. Linear' value={"b = " + coeficienteLinear} disabled />
+                    <Tooltip text="A raiz da função. f(x) = 0" position="top">
+                        <input type="text" id="raiz" className='valorRaiz' placeholder='Raiz' value={raiz} disabled />
+                    </Tooltip>
+                    <Tooltip text="O coeficiente angular da função. Determina a inclinação da reta." position="top">
+                        <input type="text" id="coeficienteAngular" className='valorCoeficienteAngular' placeholder='Coef. Angular' value={"a = " + coeficienteAngular} disabled />
+                    </Tooltip>
+                    <Tooltip text="O coeficiente linear da função. Determina o ponto de interseção com o eixo Y." position="top">
+                        <input type="text" id="coeficienteLinear" className='valorCoeficienteLinear' placeholder='Coef. Linear' value={"b = " + coeficienteLinear} disabled />
+                    </Tooltip>
                 </div>
                 <button type="button" onClick={handleCalcular}>CALCULAR</button>
             </div>
