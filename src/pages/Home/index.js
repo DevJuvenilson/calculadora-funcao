@@ -23,8 +23,10 @@ function App() {
                         <select name="formulas" id="formulas" onChange={handleFormulaChange}>
                             <option value="funcaoSegundoGrau">Função do segundo grau</option>
                             <option value="funcaoPrimeiroGrau">Função do primeiro grau</option>
-                            <option value="cicloTrigonometrico">Ciclo trigonométrico</option>
-                            <option value="funcaoLogaritmica">Função logarítmica</option>
+                            <option value="funcaoSenoidal">Função senoidal</option>
+                            <option value="funcaoCossenoidal">Função cossenoidal</option>
+                            <option value="funcaoTangente">Função tangente</option>
+                            {/* <option value="funcaoLogaritmica">Função logarítmica</option> */}
                         </select>
 
                         <FormulaRender formula={formula} />

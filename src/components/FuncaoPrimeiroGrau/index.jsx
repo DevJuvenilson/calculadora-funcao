@@ -40,9 +40,9 @@ export default function FuncaoPrimeiroGrau() {
         // Cálculos
         const raizCalc = -bNum / aNum;
     
-        setCoeficienteAngular(aNum.toFixed(2));
-        setCoeficienteLinear(bNum.toFixed(2));
-        setRaiz(`x = ${raizCalc.toFixed(2)}`);
+        setCoeficienteAngular(aNum.toFixed(2).split('.').join(','));
+        setCoeficienteLinear(bNum.toFixed(2).split('.').join(','));
+        setRaiz(`x = ${raizCalc.toFixed(2).split('.').join(',')}`);
     };
 
     return (

@@ -56,11 +56,11 @@ export default function FuncaoSegundoGrau() {
         if (deltaCalc < 0) {
             setSolucao("Sem raízes reais");
         } else {
-            setSolucao(`S = {${x1.toFixed(2)} ; ${x2.toFixed(2)}}`);
+            setSolucao(`S = {${x1.toFixed(2).split('.').join(',')}; ${x2.toFixed(2).split('.').join(',')}}`);
         }
     
-        setXVertice(xv.toFixed(2));
-        setYVertice(yv.toFixed(2));
+        setXVertice(xv.toFixed(2).split('.').join(','));
+        setYVertice(yv.toFixed(2).split('.').join(','));
     };
     
 
