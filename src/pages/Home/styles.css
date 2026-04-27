@@ -118,3 +118,95 @@ select {
     font-style: normal;
     box-sizing: border-box;
 }
+
+/* ========== DARK THEME STYLES ========== */
+
+:root.dark-theme body,
+:root.dark-theme html {
+    background-color: #1a1a1e;
+}
+
+:root.dark-theme .background {
+    background: url(../../assets/img/fundo-texturizado-escuro.png);
+    background-color: #1a1a1e;
+}
+
+:root.dark-theme .container {
+    background: linear-gradient(135deg, rgba(50, 50, 60, 0.3), rgba(50, 50, 60, 0.1));
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+:root.dark-theme .conteudo-esquerdo {
+    background-color: #2a2a2e;
+    color: #e8e8e8;
+}
+
+:root.dark-theme .conteudo-esquerdo h1 {
+    color: #e8e8e8;
+}
+
+:root.dark-theme label {
+    color: #d0d0d0;
+}
+
+:root.dark-theme select {
+    background-color: #3a3a3e;
+    color: #e8e8e8;
+    border: 1px solid #555;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+:root.dark-theme select option {
+    background-color: #2a2a2e;
+    color: #e8e8e8;
+}
+
+/* Estilos para inputs em modo escuro */
+:root.dark-theme input[type="number"],
+:root.dark-theme input[type="text"],
+:root.dark-theme input[type="email"],
+:root.dark-theme textarea {
+    background-color: #3a3a3e;
+    color: #e8e8e8;
+    border: 1px solid #555 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+:root.dark-theme input[type="number"]::placeholder,
+:root.dark-theme input[type="text"]::placeholder,
+:root.dark-theme textarea::placeholder {
+    color: #a0a0a0;
+}
+
+:root.dark-theme input[type="number"]:focus,
+:root.dark-theme input[type="text"]:focus,
+:root.dark-theme textarea:focus {
+    outline: none;
+    border-color: #7a7a8e !important;
+    box-shadow: 0 0 0 3px rgba(100, 100, 120, 0.3);
+}
+
+/* Estilos para botões em modo escuro */
+:root.dark-theme button {
+    background-color: #3a3a3e;
+    color: #e8e8e8;
+    border: 1px solid #555;
+}
+
+:root.dark-theme button:hover {
+    background-color: #4a4a4e;
+}
+
+/* Estilos para elementos de fórmula em modo escuro */
+:root.dark-theme .formula {
+    color: #e8e8e8;
+}
+
+/* Suporte a links em modo escuro */
+:root.dark-theme a {
+    color: #88ccff;
+}
+
+:root.dark-theme a:visited {
+    color: #bb88ff;
+}

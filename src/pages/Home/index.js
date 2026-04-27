@@ -1,7 +1,9 @@
 import './styles.css';
+import '../../styles/darkTheme.css';
 import FormulaRender from '../../services/FormulaRender';
 import { useState } from 'react';
 import DesmosGraph from '../../components/DesmosGraph/DesmosGraph';
+import ThemeToggle from '../../components/ThemeToggle';
 
 function App() {
 
@@ -12,6 +14,7 @@ function App() {
 
     return (
         <div className="App">
+            <ThemeToggle />
             <div className='background'>
                 <div className="container">
                     <div className="conteudo-esquerdo">

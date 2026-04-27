@@ -1,16 +1,16 @@
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+.funcao-cossenoidal input[type="number"]::-webkit-inner-spin-button,
+.funcao-cossenoidal input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-input[type="number"] {
+.funcao-cossenoidal input[type="number"] {
     border: none;
     padding: 7px;
     border-radius: 5px;
 }
 
-.formula{
+.funcao-cossenoidal .formula{
     font-family:'Times New Roman', Times, serif;
     max-width: 100%;
     font-size: 1.5em;
@@ -19,7 +19,7 @@ input[type="number"] {
     box-sizing: border-box;
 }
 
-label{
+.funcao-cossenoidal label{
     color: #333;
     margin: 10px 0px;
     font-family: "Montserrat", sans-serif;
@@ -28,7 +28,7 @@ label{
     box-sizing: border-box;
 }
 
-.valores{
+.funcao-cossenoidal .valores{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -37,10 +37,13 @@ label{
     width: 100%;
 }
 
-#a, #b, #c{
+.funcao-cossenoidal .valores input[type="number"],
+.funcao-cossenoidal .valores #a,
+.funcao-cossenoidal .valores #b,
+.funcao-cossenoidal .valores #c{
     width: 100%;
     padding: 7px;
-    margin: 0px 5px;
+    margin: 5px auto;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 20px;
@@ -50,7 +53,7 @@ label{
     box-sizing: border-box;
 }
 
-.resultados{
+.funcao-cossenoidal .resultados{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -61,10 +64,11 @@ label{
     width: 100%;
 }
 
-#imagem, #periodo {
+.funcao-cossenoidal #imagem,
+.funcao-cossenoidal #periodo {
     width: 100%;
     padding: 7px;
-    margin: 0px 5px;
+    margin: 5px auto;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 15px;
@@ -75,17 +79,23 @@ label{
 }
 
 @media (max-width: 600px) {
-    .valores, .resultados{
+    .funcao-cossenoidal .valores,
+    .funcao-cossenoidal .resultados{
         flex-direction: column;
         align-items: center;
     }
 
-    #a, #b, #c, #imagem, #periodo{
+    .funcao-cossenoidal #a,
+    .funcao-cossenoidal #b,
+    .funcao-cossenoidal #c,
+    .funcao-cossenoidal #imagem,
+    .funcao-cossenoidal #periodo{
         width: 100%;
         margin: 5px 0px;
     }
 
-    #imagem, #periodo{
+    .funcao-cossenoidal #imagem,
+    .funcao-cossenoidal #periodo{
         font-size: 20px;
     }
 }

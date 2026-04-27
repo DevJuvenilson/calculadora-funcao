@@ -27,3 +27,22 @@
 .copyButton.copied:hover {
     background-color: #218838;
 }
+
+/* Estilos para modo escuro */
+:root.dark-theme .copyButton {
+    background-color: #0056b3;
+    color: #e8e8e8;
+}
+
+:root.dark-theme .copyButton:hover {
+    background-color: #003d82;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+:root.dark-theme .copyButton.copied {
+    background-color: #1e7e34;
+}
+
+:root.dark-theme .copyButton.copied:hover {
+    background-color: #156f2f;
+}

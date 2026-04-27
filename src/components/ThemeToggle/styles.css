@@ -1,0 +1,63 @@
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-icon {
+    width: 48px;
+    height: 48px;
+    color: #333;
+    transition: transform 0.3s ease;
+    stroke-width: 1.5;
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: rotate(20deg);
+}
+
+/* Estilos do botão no modo escuro */
+:root.dark-theme .theme-toggle {
+    background: rgba(50, 50, 60, 0.8);
+    border-color: #e0e0e0;
+}
+
+:root.dark-theme .theme-icon {
+    color: #e0e0e0;
+}
+
+@media (max-width: 600px) {
+    .theme-toggle {
+        width: 60px;
+        height: 60px;
+        top: 15px;
+        right: 15px;
+    }
+
+    .theme-icon {
+        width: 36px;
+        height: 36px;
+    }
+}

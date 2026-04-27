@@ -1,16 +1,16 @@
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+.funcao-primeiro-grau input[type="number"]::-webkit-inner-spin-button,
+.funcao-primeiro-grau input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-input[type="number"] {
+.funcao-primeiro-grau input[type="number"] {
     border: none;
     padding: 7px;
     border-radius: 5px;
 }
 
-.formula{
+.funcao-primeiro-grau .formula{
     font-family:'Times New Roman', Times, serif;
     max-width: 100%;
     font-size: 1.5em;
@@ -19,7 +19,7 @@ input[type="number"] {
     box-sizing: border-box;
 }
 
-label{
+.funcao-primeiro-grau label{
     color: #333;
     margin: 10px 0px;
     font-family: "Montserrat", sans-serif;
@@ -28,7 +28,7 @@ label{
     box-sizing: border-box;
 }
 
-.valores{
+.funcao-primeiro-grau .valores{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -37,10 +37,12 @@ label{
     width: 100%;
 }
 
-#a, #b{
+.funcao-primeiro-grau .valores input[type="number"],
+.funcao-primeiro-grau .valores #a,
+.funcao-primeiro-grau .valores #b{
     width: 100%;
     padding: 7px;
-    margin: 0px 5px;
+    margin: 5px auto;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 20px;
@@ -50,7 +52,7 @@ label{
     box-sizing: border-box;
 }
 
-.resultados{
+.funcao-primeiro-grau .resultados{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -61,10 +63,11 @@ label{
     width: 100%;
 }
 
-#raiz, #coeficienteAngular, #coeficienteLinear {
+.funcao-primeiro-grau #raiz,
+.funcao-primeiro-grau #coeficienteAngular,
+.funcao-primeiro-grau #coeficienteLinear {
     width: 100%;
     padding: 7px;
-    margin: 0px 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 15px;
@@ -75,17 +78,24 @@ label{
 }
 
 @media (max-width: 600px) {
-    .valores, .resultados{
+    .funcao-primeiro-grau .valores,
+    .funcao-primeiro-grau .resultados{
         flex-direction: column;
         align-items: center;
     }
 
-    #a, #b, #raiz, #coeficienteAngular, #coeficienteLinear{
+    .funcao-primeiro-grau #a,
+    .funcao-primeiro-grau #b,
+    .funcao-primeiro-grau #raiz,
+    .funcao-primeiro-grau #coeficienteAngular,
+    .funcao-primeiro-grau #coeficienteLinear{
         width: 100%;
-        margin: 5px 0px;
+        margin: 5px auto;
     }
 
-    #raiz, #coeficienteAngular, #coeficienteLinear{
+    .funcao-primeiro-grau #raiz,
+    .funcao-primeiro-grau #coeficienteAngular,
+    .funcao-primeiro-grau #coeficienteLinear{
         font-size: 20px;
     }
 }

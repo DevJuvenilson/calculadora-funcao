@@ -18,3 +18,13 @@ button{
 button:hover {
     background-color: #ff9f1c;
 }
+
+/* Estilos para modo escuro */
+:root.dark-theme button {
+    background-color: #d4944a;
+    color: #e8e8e8;
+}
+
+:root.dark-theme button:hover {
+    background-color: #e8a855;
+}

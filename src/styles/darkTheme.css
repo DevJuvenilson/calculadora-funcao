@@ -1,0 +1,62 @@
+/* ========== GLOBAL DARK THEME STYLES ========== */
+
+/* Inputs de número */
+:root.dark-theme input[type="number"] {
+    background-color: #3a3a3e;
+    color: #e8e8e8;
+    border: 1px solid #555 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+:root.dark-theme input[type="number"]:focus {
+    border-color: #7a7a8e !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(100, 100, 120, 0.3);
+}
+
+/* Labels */
+:root.dark-theme label {
+    color: #d0d0d0;
+}
+
+/* Elementos de fórmula */
+:root.dark-theme .formula {
+    color: #e8e8e8;
+}
+
+/* Resultados de cálculo */
+:root.dark-theme #delta,
+:root.dark-theme #solucao,
+:root.dark-theme #xVertice,
+:root.dark-theme #yVertice,
+:root.dark-theme #x1,
+:root.dark-theme #x2,
+:root.dark-theme #raiz,
+:root.dark-theme #a_resultado,
+:root.dark-theme #b_resultado {
+    background-color: #3a3a3e;
+    color: #e8e8e8;
+    border: 1px solid #555 !important;
+}
+
+/* Textos em geral */
+:root.dark-theme p {
+    color: #e8e8e8;
+}
+
+/* Links */
+:root.dark-theme a {
+    color: #88ccff;
+}
+
+:root.dark-theme a:visited {
+    color: #bb88ff;
+}
+
+/* Proteção para ícones da API - não alterar cores */
+:root.dark-theme svg:not(.theme-icon),
+:root.dark-theme [class*="icon"]:not(.theme-icon),
+:root.dark-theme [class*="svg"]:not(.theme-icon) {
+    stroke: inherit !important;
+    fill: inherit !important;
+}
