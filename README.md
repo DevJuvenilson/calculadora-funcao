@@ -152,9 +152,7 @@ Adoraríamos sua contribuição! Para contribuir:
 
 ## 📋 Roadmap
 
-- [ ] Funções trigonométricas (sen, cos, tan)
 - [ ] Exportação de gráficos (PNG/PDF)
-- [ ] Modo escuro
 - [ ] Suporte multilíngue
 
 ---
