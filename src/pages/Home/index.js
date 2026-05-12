@@ -24,12 +24,16 @@ function App() {
 
                         <label htmlFor="formulas">ESCOLHA A FÓRMULA</label>
                         <select name="formulas" id="formulas" onChange={handleFormulaChange}>
-                            <option value="funcaoSegundoGrau">Função do segundo grau</option>
-                            <option value="funcaoPrimeiroGrau">Função do primeiro grau</option>
-                            <option value="funcaoSenoidal">Função senoidal</option>
-                            <option value="funcaoCossenoidal">Função cossenoidal</option>
-                            <option value="funcaoTangente">Função tangente</option>
-                            {/* <option value="funcaoLogaritmica">Função logarítmica</option> */}
+                            <option value="funcaoPrimeiroGrau">Função Afim</option>
+                            <option value="funcaoSegundoGrau">Função Quadrática</option>
+                            <option value="funcaoBiquadratica">Função Biquadrática</option>
+                            <option value="funcaoExponencial">Função Exponencial</option>
+                            <option value="funcaoLogaritmica">Função Logarítmica</option>
+                            <option value="funcaoModular">Função Modular</option>
+                            <option value="funcaoConstante">Função Constante</option>
+                            <option value="funcaoSenoidal">Função Senoidal</option>
+                            <option value="funcaoCossenoidal">Função Cossenoidal</option>
+                            <option value="funcaoTangente">Função Tangente</option>
                         </select>
 
                         <FormulaRender formula={formula} />

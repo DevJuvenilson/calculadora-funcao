@@ -1,16 +1,16 @@
-.funcao-cossenoidal input[type="number"]::-webkit-inner-spin-button,
-.funcao-cossenoidal input[type="number"]::-webkit-outer-spin-button {
+.funcao-biquadratica input[type="number"]::-webkit-inner-spin-button,
+.funcao-biquadratica input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-.funcao-cossenoidal input[type="number"] {
+.funcao-biquadratica input[type="number"] {
     border: none;
     padding: 7px;
     border-radius: 5px;
 }
 
-.funcao-cossenoidal .formula{
+.funcao-biquadratica .formula{
     font-family:'Times New Roman', Times, serif;
     max-width: 100%;
     font-size: 1.5em;
@@ -19,7 +19,7 @@
     box-sizing: border-box;
 }
 
-.funcao-cossenoidal label{
+.funcao-biquadratica label{
     color: #333;
     margin: 10px 0px;
     font-family: "Montserrat", sans-serif;
@@ -28,7 +28,7 @@
     box-sizing: border-box;
 }
 
-.funcao-cossenoidal .valores{
+.funcao-biquadratica .valores{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -37,10 +37,10 @@
     width: 100%;
 }
 
-.funcao-cossenoidal .valores input[type="number"],
-.funcao-cossenoidal .valores #a,
-.funcao-cossenoidal .valores #b,
-.funcao-cossenoidal .valores #c{
+.funcao-biquadratica .valores input[type="number"],
+.funcao-biquadratica .valores #a,
+.funcao-biquadratica .valores #b,
+.funcao-biquadratica .valores #c{
     width: 100%;
     padding: 7px;
     margin: 5px auto;
@@ -53,10 +53,10 @@
     box-sizing: border-box;
 }
 
-.funcao-cossenoidal .resultados{
+.funcao-biquadratica .resultados{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 10px auto;
     box-sizing: border-box;
@@ -64,8 +64,10 @@
     width: 100%;
 }
 
-.funcao-cossenoidal #imagem,
-.funcao-cossenoidal #periodo {
+.funcao-biquadratica #deltaAuxiliar,
+.funcao-biquadratica #raizesAuxiliares,
+.funcao-biquadratica #raizesFuncao,
+.funcao-biquadratica #corteY {
     width: 100%;
     padding: 7px;
     margin: 5px auto;
@@ -79,23 +81,27 @@
 }
 
 @media (max-width: 600px) {
-    .funcao-cossenoidal .valores,
-    .funcao-cossenoidal .resultados{
+    .funcao-biquadratica .valores,
+    .funcao-biquadratica .resultados{
         flex-direction: column;
         align-items: center;
     }
 
-    .funcao-cossenoidal #a,
-    .funcao-cossenoidal #b,
-    .funcao-cossenoidal #c,
-    .funcao-cossenoidal #imagem,
-    .funcao-cossenoidal #periodo{
+    .funcao-biquadratica #a,
+    .funcao-biquadratica #b,
+    .funcao-biquadratica #c,
+    .funcao-biquadratica #deltaAuxiliar,
+    .funcao-biquadratica #raizesAuxiliares,
+    .funcao-biquadratica #raizesFuncao,
+    .funcao-biquadratica #corteY{
         width: 100%;
-        margin: 5px 0px;
+        margin: 5px auto;
     }
 
-    .funcao-cossenoidal #imagem,
-    .funcao-cossenoidal #periodo{
+    .funcao-biquadratica #deltaAuxiliar,
+    .funcao-biquadratica #raizesAuxiliares,
+    .funcao-biquadratica #raizesFuncao,
+    .funcao-biquadratica #corteY{
         font-size: 20px;
     }
 }
