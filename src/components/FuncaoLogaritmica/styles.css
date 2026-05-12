@@ -1,0 +1,103 @@
+.funcao-logaritmica input[type="number"]::-webkit-inner-spin-button,
+.funcao-logaritmica input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.funcao-logaritmica input[type="number"] {
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.funcao-logaritmica .formula{
+    font-family:'Times New Roman', Times, serif;
+    max-width: 100%;
+    font-size: 1.5em;
+    margin: 30px auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.funcao-logaritmica label{
+    color: #333;
+    margin: 10px 0px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.funcao-logaritmica .valores{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    width: 100%;
+}
+
+.funcao-logaritmica .valores input[type="number"],
+.funcao-logaritmica .valores #a{
+    width: 100%;
+    padding: 7px;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.funcao-logaritmica .resultados{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.funcao-logaritmica #dominio,
+.funcao-logaritmica #raiz,
+.funcao-logaritmica #interseccaoY,
+.funcao-logaritmica #comportamento {
+    width: 100%;
+    padding: 7px;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .funcao-logaritmica .valores,
+    .funcao-logaritmica .resultados{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .funcao-logaritmica #a,
+    .funcao-logaritmica #dominio,
+    .funcao-logaritmica #raiz,
+    .funcao-logaritmica #interseccaoY,
+    .funcao-logaritmica #comportamento{
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .funcao-logaritmica #dominio,
+    .funcao-logaritmica #raiz,
+    .funcao-logaritmica #interseccaoY,
+    .funcao-logaritmica #comportamento{
+        font-size: 20px;
+    }
+}

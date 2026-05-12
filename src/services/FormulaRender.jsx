@@ -5,13 +5,14 @@ import FuncaoCossenoidal from "../components/FuncaoCossenoidal/index.jsx";
 import FuncaoTangente from "../components/FuncaoTangente/index.jsx"; 
 import FuncaoBiquadratica from "../components/FuncaoBiquadratica/index.jsx"; 
 import FuncaoExponencial from "../components/FuncaoExponencial/index.jsx"; 
+import FuncaoLogaritmica from "../components/FuncaoLogaritmica/index.jsx"; 
 
 const formulasMap = {
     funcaoPrimeiroGrau: <FuncaoPrimeiroGrau />,
     funcaoSegundoGrau: <FuncaoSegundoGrau />,
     funcaoBiquadratica: <FuncaoBiquadratica />,
     funcaoExponencial: <FuncaoExponencial />,
-    // funcaoLogaritmica: <FuncaoLogaritmica />,
+    funcaoLogaritmica: <FuncaoLogaritmica />,
     // funcaoModular: <FuncaoModular />,
     // funcaoConstante: <FuncaoConstante />,
     funcaoSenoidal: <FuncaoSenoidal />,
