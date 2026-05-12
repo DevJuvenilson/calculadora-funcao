@@ -1,0 +1,103 @@
+.funcao-exponencial input[type="number"]::-webkit-inner-spin-button,
+.funcao-exponencial input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.funcao-exponencial input[type="number"] {
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.funcao-exponencial .formula{
+    font-family:'Times New Roman', Times, serif;
+    max-width: 100%;
+    font-size: 1.5em;
+    margin: 30px auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.funcao-exponencial label{
+    color: #333;
+    margin: 10px 0px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.funcao-exponencial .valores{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    width: 100%;
+}
+
+.funcao-exponencial .valores input[type="number"],
+.funcao-exponencial .valores #a{
+    width: 100%;
+    padding: 7px;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.funcao-exponencial .resultados{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.funcao-exponencial #imagem,
+.funcao-exponencial #raiz,
+.funcao-exponencial #interseccaoY,
+.funcao-exponencial #comportamento {
+    width: 100%;
+    padding: 7px;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .funcao-exponencial .valores,
+    .funcao-exponencial .resultados{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .funcao-exponencial #a,
+    .funcao-exponencial #imagem,
+    .funcao-exponencial #raiz,
+    .funcao-exponencial #interseccaoY,
+    .funcao-exponencial #comportamento{
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .funcao-exponencial #imagem,
+    .funcao-exponencial #raiz,
+    .funcao-exponencial #interseccaoY,
+    .funcao-exponencial #comportamento{
+        font-size: 20px;
+    }
+}
