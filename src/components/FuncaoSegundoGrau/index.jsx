@@ -36,19 +36,37 @@ export default function FuncaoSegundoGrau() {
         }
     };
 
+    const toggleSignA = () => {
+        if (a !== '') {
+            setA(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
+    const toggleSignB = () => {
+        if (b !== '') {
+            setB(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
+    const toggleSignC = () => {
+        if (c !== '') {
+            setC(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
     // Texto para copiar em formato LaTeX
     const formulaText = `f(x) = ${a || 'a'}x^{2} + ${b || 'b'}x + ${c || 'c'}`;
 
     const [delta, setDelta] = useState('');
     const [solucao, setSolucao] = useState('');
-    const [xVertice, setXVertice] = useState(''); 
+    const [xVertice, setXVertice] = useState('');
     const [yVertice, setYVertice] = useState('');
 
     const handleCalcular = () => {
         const aNum = parseFloat(a);
         const bNum = parseFloat(b);
         const cNum = parseFloat(c);
-    
+
         if (isNaN(aNum) || isNaN(bNum) || isNaN(cNum)) {
             alert("Por favor, insira todos os valores corretamente.");
             return;
@@ -58,33 +76,33 @@ export default function FuncaoSegundoGrau() {
             alert("O coeficiente 'a' não pode ser zero.");
             return;
         }
-    
+
         const deltaCalc = bNum * bNum - 4 * aNum * cNum;
         setDelta(deltaCalc);
-    
+
         // Fórmulas
         const x1 = (-bNum + Math.sqrt(deltaCalc)) / (2 * aNum);
         const x2 = (-bNum - Math.sqrt(deltaCalc)) / (2 * aNum);
         const xv = -bNum / (2 * aNum);
         const yv = -deltaCalc / (4 * aNum);
-    
+
         if (deltaCalc < 0) {
             setSolucao("Sem raízes reais");
         } else {
             setSolucao(`S = {${x1.toFixed(2).split('.').join(',')}; ${x2.toFixed(2).split('.').join(',')}}`);
         }
-    
+
         setXVertice(xv.toFixed(2).split('.').join(','));
         setYVertice(yv.toFixed(2).split('.').join(','));
     };
-    
+
 
     return (
         <div className="funcao-segundo-grau">
             <header>
                 <p ref={paragrafoRef} className='formula'>f(x) = {a || 'a'}x² + {b || 'b'}x + {c || 'c'}</p>
             </header>
-            
+
             <CopyButton text={formulaText} label='Copiar' />
 
             <div className="formulario">
@@ -92,13 +110,22 @@ export default function FuncaoSegundoGrau() {
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
                     <Tooltip text="Coeficiente angular. Determina a abertura da parábola. Não pode ser zero." position="top">
-                        <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignA}>±</button>
+                            <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        </div>
                     </Tooltip>
                     <Tooltip text="Coeficiente linear. Afeta a posição horizontal da parábola." position="top">
-                        <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignB}>±</button>
+                            <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                        </div>
                     </Tooltip>
                     <Tooltip text="Termo independente. Determina onde a parábola cruza o eixo Y." position="top">
-                        <input type="text" inputMode="decimal" id="c" className='valorC' placeholder='c' value={c} onChange={handleChangeC} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignC}>±</button>
+                            <input type="text" inputMode="decimal" id="c" className='valorC' placeholder='c' value={c} onChange={handleChangeC} />
+                        </div>
                     </Tooltip>
                 </div>
 

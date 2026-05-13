@@ -27,6 +27,18 @@ export default function FuncaoModular() {
         }
     };
 
+    const toggleSignA = () => {
+        if (a !== '') {
+            setA(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
+    const toggleSignB = () => {
+        if (b !== '') {
+            setB(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
     // Texto para copiar em formato LaTeX
     const formulaText = `f(x)=\\left|${a || 'a'}x+${b || 'b'}\\right|`;
 
@@ -38,7 +50,7 @@ export default function FuncaoModular() {
     const handleCalcular = () => {
         const aNum = parseFloat(a);
         const bNum = parseFloat(b);
-    
+
         if (isNaN(aNum) || isNaN(bNum)) {
             alert("Por favor, insira todos os valores corretamente.");
             return;
@@ -48,29 +60,29 @@ export default function FuncaoModular() {
             alert("O coeficiente 'a' não pode ser zero.");
             return;
         }
-    
+
         // Vértice/ponto de dobra: x = -b/a
         const verticeCoordenada = -bNum / aNum;
         setVertice(verticeCoordenada.toFixed(2).split('.').join(','));
-        
+
         // Raiz: |ax + b| = 0 => ax + b = 0 => x = -b/a
         setRaiz(`S = { ${verticeCoordenada.toFixed(2).split('.').join(',')} }`);
-        
+
         // Intersecção no eixo Y: f(0) = |a*0 + b| = |b|
         const interseccaoYValue = Math.abs(bNum);
         setInterseccaoY(interseccaoYValue.toFixed(2).split('.').join(','));
-        
+
         // Imagem: sempre {y ∈ ℝ | y ≥ 0}
         setImagem("Im = {y ∈ ℝ | y ≥ 0}");
     };
-    
+
 
     return (
         <div className="funcao-modular">
             <header>
                 <p ref={paragrafoRef} className='formula'>f(x) = |{a || 'a'}x + {b || 'b'}|</p>
             </header>
-            
+
             <CopyButton text={formulaText} label='Copiar' />
 
             <div className="formulario">
@@ -78,10 +90,16 @@ export default function FuncaoModular() {
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
                     <Tooltip text="Coeficiente angular. Determina a inclinação da reta dentro do módulo. Não pode ser zero." position="top">
-                        <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignA}>±</button>
+                            <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        </div>
                     </Tooltip>
                     <Tooltip text="Coeficiente linear. Afeta a posição do vértice da função modular." position="top">
-                        <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignB}>±</button>
+                            <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                        </div>
                     </Tooltip>
                 </div>
 

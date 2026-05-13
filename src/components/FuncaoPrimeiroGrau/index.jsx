@@ -35,6 +35,18 @@ export default function FuncaoPrimeiroGrau() {
         }
     };
 
+    const toggleSignA = () => {
+        if (a !== '') {
+            setA(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
+    const toggleSignB = () => {
+        if (b !== '') {
+            setB(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
     const [raiz, setRaiz] = useState('');
     const [coeficienteAngular, setCoeficienteAngular] = useState('');
     const [coeficienteLinear, setCoeficienteLinear] = useState('');
@@ -73,20 +85,14 @@ export default function FuncaoPrimeiroGrau() {
 
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
-                    <input type="text"
-                        inputMode="decimal"
-                        id="a"
-                        className='valorA'
-                        placeholder='a'
-                        value={a}
-                        onChange={handleChangeA} />
-                    <input type="text"
-                        inputMode="decimal"
-                        id="b"
-                        className='valorB'
-                        placeholder='b'
-                        value={b}
-                        onChange={handleChangeB} />
+                    <div className='input-group'>
+                        <button type="button" className='toggle-sign' onClick={toggleSignA}>±</button>
+                        <input type="number" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                    </div>
+                    <div className='input-group'>
+                        <button type="button" className='toggle-sign' onClick={toggleSignB}>±</button>
+                        <input type="number" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                    </div>
                 </div>
 
                 <label className='label'>RESULTADOS</label>

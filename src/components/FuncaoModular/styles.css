@@ -10,8 +10,8 @@
     border-radius: 5px;
 }
 
-.funcao-modular .formula{
-    font-family:'Times New Roman', Times, serif;
+.funcao-modular .formula {
+    font-family: 'Times New Roman', Times, serif;
     max-width: 100%;
     font-size: 1.5em;
     margin: 30px auto;
@@ -19,7 +19,7 @@
     box-sizing: border-box;
 }
 
-.funcao-modular label{
+.funcao-modular label {
     color: #333;
     margin: 10px 0px;
     font-family: "Montserrat", sans-serif;
@@ -28,18 +28,51 @@
     box-sizing: border-box;
 }
 
-.funcao-modular .valores{
+.funcao-modular .valores {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     margin: 10px auto;
     width: 100%;
+    gap: 10px;
+}
+
+.funcao-modular .input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}
+
+.funcao-modular .toggle-sign {
+    padding: 7px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    min-width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.funcao-modular .toggle-sign:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+}
+
+.funcao-modular .toggle-sign:active {
+    background-color: #d0d0d0;
 }
 
 .funcao-modular .valores input[type="number"],
 .funcao-modular .valores #a,
-.funcao-modular .valores #b{
+.funcao-modular .valores #b {
     width: 100%;
     padding: 7px;
     margin: 5px auto;
@@ -52,7 +85,7 @@
     box-sizing: border-box;
 }
 
-.funcao-modular .resultados{
+.funcao-modular .resultados {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -80,10 +113,15 @@
 }
 
 @media (max-width: 600px) {
+
     .funcao-modular .valores,
-    .funcao-modular .resultados{
+    .funcao-modular .resultados {
         flex-direction: column;
         align-items: center;
+    }
+
+    .funcao-modular .input-group {
+        width: 100%;
     }
 
     .funcao-modular #a,
@@ -91,7 +129,7 @@
     .funcao-modular #vertice,
     .funcao-modular #raiz,
     .funcao-modular #interseccaoY,
-    .funcao-modular #imagem{
+    .funcao-modular #imagem {
         width: 100%;
         margin: 5px auto;
     }
@@ -99,7 +137,7 @@
     .funcao-modular #vertice,
     .funcao-modular #raiz,
     .funcao-modular #interseccaoY,
-    .funcao-modular #imagem{
+    .funcao-modular #imagem {
         font-size: 20px;
     }
 }

@@ -36,6 +36,24 @@ export default function FuncaoSenoidal() {
         }
     };
 
+    const toggleSignA = () => {
+        if (a !== '') {
+            setA(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
+    const toggleSignB = () => {
+        if (b !== '') {
+            setB(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
+    const toggleSignC = () => {
+        if (c !== '') {
+            setC(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
     // Texto para copiar em formato LaTeX
     const formulaText = `f(x) = ${a || 'a'} + ${b || 'b'}  \\sin(${c || 'c'}  x)`;
 
@@ -81,13 +99,22 @@ export default function FuncaoSenoidal() {
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
                     <Tooltip text="Deslocamento vertical. Define o centro da oscilação." position="top">
-                        <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignA}>±</button>
+                            <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        </div>
                     </Tooltip>
                     <Tooltip text="Amplitude. Define a altura da onda. Quanto maior, mais intensa a oscilação." position="top">
-                        <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignB}>±</button>
+                            <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                        </div>
                     </Tooltip>
                     <Tooltip text="Frequência angular. Afeta a velocidade da oscilação. Não pode ser zero." position="top">
-                        <input type="text" inputMode="decimal" id="c" className='valorC' placeholder='c' value={c} onChange={handleChangeC} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignC}>±</button>
+                            <input type="text" inputMode="decimal" id="c" className='valorC' placeholder='c' value={c} onChange={handleChangeC} />
+                        </div>
                     </Tooltip>
                 </div>
 

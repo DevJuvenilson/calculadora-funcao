@@ -36,6 +36,24 @@ export default function FuncaoBiquadratica() {
         }
     };
 
+    const toggleSignA = () => {
+        if (a !== '') {
+            setA(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
+    const toggleSignB = () => {
+        if (b !== '') {
+            setB(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
+    const toggleSignC = () => {
+        if (c !== '') {
+            setC(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
     // Texto para copiar em formato LaTeX
     const formulaText = `f(x) = ${a || 'a'}x^{4} + ${b || 'b'}x^{2} + ${c || 'c'}`;
 
@@ -48,7 +66,7 @@ export default function FuncaoBiquadratica() {
         const aNum = parseFloat(a);
         const bNum = parseFloat(b);
         const cNum = parseFloat(c);
-    
+
         if (isNaN(aNum) || isNaN(bNum) || isNaN(cNum)) {
             alert("Por favor, insira todos os valores corretamente.");
             return;
@@ -58,37 +76,37 @@ export default function FuncaoBiquadratica() {
             alert("O coeficiente 'a' não pode ser zero.");
             return;
         }
-    
+
         // Cálculo da função biquadrática: f(x) = ax^4 + bx^2 + c
         // Substituição: y = x^2, então: ay^2 + by + c = 0
-        
+
         // Delta da equação auxiliar
         const deltaAux = bNum * bNum - 4 * aNum * cNum;
         setDeltaAuxiliar(deltaAux.toFixed(2).split('.').join(','));
-    
+
         // Raízes da equação auxiliar (y1 e y2)
         let raizesAux = '';
         let raizesFunc = [];
-        
+
         if (deltaAux < 0) {
             raizesAux = "Sem raízes reais na equação auxiliar";
             raizesFunc = [];
         } else {
             const y1 = (-bNum + Math.sqrt(deltaAux)) / (2 * aNum);
             const y2 = (-bNum - Math.sqrt(deltaAux)) / (2 * aNum);
-            
+
             raizesAux = `S = {${y1.toFixed(2).split('.').join(',')}; ${y2.toFixed(2).split('.').join(',')}}`;
-            
+
             // Cálculo das quatro raízes da função biquadrática
             // Para cada y >= 0, x = ± √y
-            
+
             if (y1 >= 0) {
                 const x1 = Math.sqrt(y1);
                 const x2 = -Math.sqrt(y1);
                 raizesFunc.push(x1);
                 raizesFunc.push(x2);
             }
-            
+
             if (y2 >= 0 && Math.abs(y2 - y1) > 0.0001) {
                 const x3 = Math.sqrt(y2);
                 const x4 = -Math.sqrt(y2);
@@ -96,9 +114,9 @@ export default function FuncaoBiquadratica() {
                 raizesFunc.push(x4);
             }
         }
-        
+
         setRaizesAuxiliares(raizesAux);
-        
+
         // Formatação das raízes da função
         if (raizesFunc.length === 0) {
             setRaizesFuncao("Sem raízes reais");
@@ -109,18 +127,18 @@ export default function FuncaoBiquadratica() {
                 .join('; ');
             setRaizesFuncao(`S = {${raizesFormatadas}}`);
         }
-        
+
         // Corte em Y: quando x = 0, f(0) = c
         setCorteY(cNum.toFixed(2).split('.').join(','));
     };
-    
+
 
     return (
         <div className="funcao-biquadratica">
             <header>
                 <p ref={paragrafoRef} className='formula'>f(x) = {a || 'a'}x⁴ + {b || 'b'}x² + {c || 'c'}</p>
             </header>
-            
+
             <CopyButton text={formulaText} label='Copiar' />
 
             <div className="formulario">
@@ -128,13 +146,22 @@ export default function FuncaoBiquadratica() {
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
                     <Tooltip text="Coeficiente de x⁴. Determina a abertura da curva. Não pode ser zero." position="top">
-                        <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignA}>±</button>
+                            <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        </div>
                     </Tooltip>
                     <Tooltip text="Coeficiente de x². Afeta a forma da curva." position="top">
-                        <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignB}>±</button>
+                            <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                        </div>
                     </Tooltip>
                     <Tooltip text="Termo independente. Determina onde a curva cruza o eixo Y." position="top">
-                        <input type="text" inputMode="decimal" id="c" className='valorC' placeholder='c' value={c} onChange={handleChangeC} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignC}>±</button>
+                            <input type="text" inputMode="decimal" id="c" className='valorC' placeholder='c' value={c} onChange={handleChangeC} />
+                        </div>
                     </Tooltip>
                 </div>
 

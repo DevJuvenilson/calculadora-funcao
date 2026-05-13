@@ -18,6 +18,12 @@ export default function FuncaoExponencial() {
         }
     };
 
+    const toggleSignA = () => {
+        if (a !== '') {
+            setA(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
     // Texto para copiar em formato LaTeX
     const formulaText = `f(x) = ${a || 'a'}^{x}`;
 
@@ -75,7 +81,10 @@ export default function FuncaoExponencial() {
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
                     <Tooltip text="Base da função exponencial. Deve ser positiva e diferente de 1." position="top">
-                        <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignA}>±</button>
+                            <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        </div>
                     </Tooltip>
                 </div>
 

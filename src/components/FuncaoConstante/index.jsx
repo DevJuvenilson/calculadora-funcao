@@ -18,6 +18,12 @@ export default function FuncaoConstante() {
         }
     };
 
+    const toggleSignK = () => {
+        if (k !== '') {
+            setK(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+        }
+    };
+
     // Texto para copiar em formato LaTeX
     const formulaText = `f(x)=${k || 'k'}`;
 
@@ -26,30 +32,30 @@ export default function FuncaoConstante() {
 
     const handleCalcular = () => {
         const kNum = parseFloat(k);
-    
+
         if (isNaN(kNum)) {
             alert("Por favor, insira o valor de 'k' corretamente.");
             return;
         }
-    
+
         // Raiz: Se k ≠ 0, "Não existe". Se k = 0, "Infinitas raízes"
         if (kNum === 0) {
             setRaiz("Infinitas raízes");
         } else {
             setRaiz("Não existe");
         }
-        
+
         // Inclinação: sempre 0° para função constante
         setInclinacao("0°");
     };
-    
+
 
     return (
         <div className="funcao-constante">
             <header>
                 <p ref={paragrafoRef} className='formula'>f(x) = {k || 'k'}</p>
             </header>
-            
+
             <CopyButton text={formulaText} label='Copiar' />
 
             <div className="formulario">
@@ -57,7 +63,10 @@ export default function FuncaoConstante() {
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
                     <Tooltip text="Constante. Determina o valor fixo da função para qualquer x." position="top">
-                        <input type="text" inputMode="decimal" id="k" className='valorK' placeholder='k' value={k} onChange={handleChangeK} />
+                        <div className='input-group'>
+                            <button type="button" className='toggle-sign' onClick={toggleSignK}>±</button>
+                            <input type="text" inputMode="decimal" id="k" className='valorK' placeholder='k' value={k} onChange={handleChangeK} />
+                        </div>
                     </Tooltip>
                 </div>
 

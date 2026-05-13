@@ -10,8 +10,8 @@
     border-radius: 5px;
 }
 
-.funcao-segundo-grau .formula{
-    font-family:'Times New Roman', Times, serif;
+.funcao-segundo-grau .formula {
+    font-family: 'Times New Roman', Times, serif;
     max-width: 100%;
     font-size: 1.5em;
     margin: 30px auto;
@@ -19,7 +19,7 @@
     box-sizing: border-box;
 }
 
-.funcao-segundo-grau label{
+.funcao-segundo-grau label {
     color: #333;
     margin: 10px 0px;
     font-family: "Montserrat", sans-serif;
@@ -28,19 +28,52 @@
     box-sizing: border-box;
 }
 
-.funcao-segundo-grau .valores{
+.funcao-segundo-grau .valores {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin: 10px auto;
     width: 100%;
+    gap: 10px;
+}
+
+.funcao-segundo-grau .input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}
+
+.funcao-segundo-grau .toggle-sign {
+    padding: 7px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    min-width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.funcao-segundo-grau .toggle-sign:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+}
+
+.funcao-segundo-grau .toggle-sign:active {
+    background-color: #d0d0d0;
 }
 
 .funcao-segundo-grau .valores input[type="number"],
 .funcao-segundo-grau .valores #a,
 .funcao-segundo-grau .valores #b,
-.funcao-segundo-grau .valores #c{
+.funcao-segundo-grau .valores #c {
     width: 100%;
     padding: 7px;
     margin: 5px auto;
@@ -53,7 +86,7 @@
     box-sizing: border-box;
 }
 
-.funcao-segundo-grau .resultados{
+.funcao-segundo-grau .resultados {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -81,10 +114,15 @@
 }
 
 @media (max-width: 600px) {
+
     .funcao-segundo-grau .valores,
-    .funcao-segundo-grau .resultados{
+    .funcao-segundo-grau .resultados {
         flex-direction: column;
         align-items: center;
+    }
+
+    .funcao-segundo-grau .input-group {
+        width: 100%;
     }
 
     .funcao-segundo-grau #a,
@@ -93,7 +131,7 @@
     .funcao-segundo-grau #delta,
     .funcao-segundo-grau #solucao,
     .funcao-segundo-grau #xVertice,
-    .funcao-segundo-grau #yVertice{
+    .funcao-segundo-grau #yVertice {
         width: 100%;
         margin: 5px auto;
     }
@@ -101,7 +139,7 @@
     .funcao-segundo-grau #delta,
     .funcao-segundo-grau #solucao,
     .funcao-segundo-grau #xVertice,
-    .funcao-segundo-grau #yVertice{
+    .funcao-segundo-grau #yVertice {
         font-size: 20px;
     }
 }
