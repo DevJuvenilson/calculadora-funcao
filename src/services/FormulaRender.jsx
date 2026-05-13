@@ -7,6 +7,7 @@ import FuncaoBiquadratica from "../components/FuncaoBiquadratica/index.jsx";
 import FuncaoExponencial from "../components/FuncaoExponencial/index.jsx"; 
 import FuncaoLogaritmica from "../components/FuncaoLogaritmica/index.jsx"; 
 import FuncaoModular from "../components/FuncaoModular/index.jsx"; 
+import FuncaoConstante from "../components/FuncaoConstante/index.jsx"; 
 
 const formulasMap = {
     funcaoPrimeiroGrau: <FuncaoPrimeiroGrau />,
@@ -15,7 +16,7 @@ const formulasMap = {
     funcaoExponencial: <FuncaoExponencial />,
     funcaoLogaritmica: <FuncaoLogaritmica />,
     funcaoModular: <FuncaoModular />,
-    // funcaoConstante: <FuncaoConstante />,
+    funcaoConstante: <FuncaoConstante />,
     funcaoSenoidal: <FuncaoSenoidal />,
     funcaoCossenoidal: <FuncaoCossenoidal />,
     funcaoTangente: <FuncaoTangente />,

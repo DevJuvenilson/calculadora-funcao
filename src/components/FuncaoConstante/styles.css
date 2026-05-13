@@ -1,0 +1,97 @@
+.funcao-constante input[type="number"]::-webkit-inner-spin-button,
+.funcao-constante input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.funcao-constante input[type="number"] {
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.funcao-constante .formula{
+    font-family:'Times New Roman', Times, serif;
+    max-width: 100%;
+    font-size: 1.5em;
+    margin: 30px auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.funcao-constante label{
+    color: #333;
+    margin: 10px 0px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.funcao-constante .valores{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    width: 100%;
+}
+
+.funcao-constante .valores input[type="number"],
+.funcao-constante .valores #k{
+    width: 100%;
+    padding: 7px;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.funcao-constante .resultados{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.funcao-constante #raiz,
+.funcao-constante #inclinacao {
+    width: 100%;
+    padding: 7px;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .funcao-constante .valores,
+    .funcao-constante .resultados{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .funcao-constante #k,
+    .funcao-constante #raiz,
+    .funcao-constante #inclinacao{
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .funcao-constante #raiz,
+    .funcao-constante #inclinacao{
+        font-size: 20px;
+    }
+}
