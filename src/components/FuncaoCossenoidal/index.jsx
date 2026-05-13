@@ -62,7 +62,7 @@ export default function FuncaoCossenoidal() {
                 <p ref={paragrafoRef} className='formula'>f(x) = {a || 'a'} + {b || 'b'}  cos({c || 'c'}  x)</p>
             </header>
             
-            <CopyButton targetRef={formulaText} />
+            <CopyButton text={formulaText} label='Copiar' />
 
             <div className="formulario">
 

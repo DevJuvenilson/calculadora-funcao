@@ -73,7 +73,7 @@ export default function FuncaoSegundoGrau() {
                 <p ref={paragrafoRef} className='formula'>f(x) = {a || 'a'}x² + {b || 'b'}x + {c || 'c'}</p>
             </header>
             
-            <CopyButton targetRef={formulaText} />
+            <CopyButton text={formulaText} label='Copiar' />
 
             <div className="formulario">
 

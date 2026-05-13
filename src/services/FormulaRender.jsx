@@ -20,7 +20,6 @@ const formulasMap = {
     funcaoSenoidal: <FuncaoSenoidal />,
     funcaoCossenoidal: <FuncaoCossenoidal />,
     funcaoTangente: <FuncaoTangente />,
-    // funcaoLogaritmica: <FuncaoLogaritmica />,
 };
 
 export default function FormulaRender({ formula }) {

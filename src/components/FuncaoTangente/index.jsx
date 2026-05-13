@@ -61,7 +61,7 @@ export default function FuncaoTangente() {
                 <p ref={paragrafoRef} className='formula'>f(x) = {a || 'a'} + {b || 'b'}  tan({c || 'c'}  x)</p>
             </header>
             
-            <CopyButton targetRef={formulaText} />
+            <CopyButton text={formulaText} label='Copiar' />
 
             <div className="formulario">
 

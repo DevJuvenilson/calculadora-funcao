@@ -7,7 +7,7 @@ import ThemeToggle from '../../components/ThemeToggle';
 
 function App() {
 
-    const [formula, setFormula] = useState('funcaoSegundoGrau');
+    const [formula, setFormula] = useState('funcaoPrimeiroGrau');
     const handleFormulaChange = (event) => {
         setFormula(event.target.value);
     };

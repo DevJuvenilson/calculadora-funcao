@@ -109,7 +109,7 @@ export default function FuncaoBiquadratica() {
                 <p ref={paragrafoRef} className='formula'>f(x) = {a || 'a'}x⁴ + {b || 'b'}x² + {c || 'c'}</p>
             </header>
             
-            <CopyButton targetRef={formulaText} />
+            <CopyButton text={formulaText} label='Copiar' />
 
             <div className="formulario">
 
