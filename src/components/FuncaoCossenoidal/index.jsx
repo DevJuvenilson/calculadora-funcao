@@ -24,6 +24,9 @@ export default function FuncaoCossenoidal() {
         setC(event.target.value);
     };
 
+    // Texto para copiar em formato LaTeX
+    const formulaText = `f(x) = ${a || 'a'} + ${b || 'b'}  \\cos(${c || 'c'}  x)`;
+
     const [imagem, setImagem] = useState('');
     const [periodo, setPeriodo] = useState('');
 
@@ -59,7 +62,7 @@ export default function FuncaoCossenoidal() {
                 <p ref={paragrafoRef} className='formula'>f(x) = {a || 'a'} + {b || 'b'}  cos({c || 'c'}  x)</p>
             </header>
             
-            <CopyButton targetRef={paragrafoRef} />
+            <CopyButton targetRef={formulaText} />
 
             <div className="formulario">
 

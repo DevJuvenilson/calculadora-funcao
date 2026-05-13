@@ -24,6 +24,9 @@ export default function FuncaoSegundoGrau() {
         setC(event.target.value);
     };
 
+    // Texto para copiar em formato LaTeX
+    const formulaText = `f(x) = ${a || 'a'}x^{2} + ${b || 'b'}x + ${c || 'c'}`;
+
     const [delta, setDelta] = useState('');
     const [solucao, setSolucao] = useState('');
     const [xVertice, setXVertice] = useState(''); 
@@ -70,7 +73,7 @@ export default function FuncaoSegundoGrau() {
                 <p ref={paragrafoRef} className='formula'>f(x) = {a || 'a'}x² + {b || 'b'}x + {c || 'c'}</p>
             </header>
             
-            <CopyButton targetRef={paragrafoRef} />
+            <CopyButton targetRef={formulaText} />
 
             <div className="formulario">
 

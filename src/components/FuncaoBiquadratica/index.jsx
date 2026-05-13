@@ -24,6 +24,9 @@ export default function FuncaoBiquadratica() {
         setC(event.target.value);
     };
 
+    // Texto para copiar em formato LaTeX
+    const formulaText = `f(x) = ${a || 'a'}x^{4} + ${b || 'b'}x^{2} + ${c || 'c'}`;
+
     const [deltaAuxiliar, setDeltaAuxiliar] = useState('');
     const [raizesAuxiliares, setRaizesAuxiliares] = useState('');
     const [raizesFuncao, setRaizesFuncao] = useState('');
@@ -106,7 +109,7 @@ export default function FuncaoBiquadratica() {
                 <p ref={paragrafoRef} className='formula'>f(x) = {a || 'a'}x⁴ + {b || 'b'}x² + {c || 'c'}</p>
             </header>
             
-            <CopyButton targetRef={paragrafoRef} />
+            <CopyButton targetRef={formulaText} />
 
             <div className="formulario">
 
