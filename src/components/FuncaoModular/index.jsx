@@ -12,11 +12,19 @@ export default function FuncaoModular() {
     const [b, setB] = useState('');
 
     const handleChangeA = (event) => {
-        setA(event.target.value);
+        let value = event.target.value;
+        value = value.replace(',', '.');
+        if (/^-?\d*\.?\d*$/.test(value)) {
+            setA(value);
+        }
     };
 
     const handleChangeB = (event) => {
-        setB(event.target.value);
+        let value = event.target.value;
+        value = value.replace(',', '.');
+        if (/^-?\d*\.?\d*$/.test(value)) {
+            setB(value);
+        }
     };
 
     // Texto para copiar em formato LaTeX
@@ -70,10 +78,10 @@ export default function FuncaoModular() {
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
                     <Tooltip text="Coeficiente angular. Determina a inclinação da reta dentro do módulo. Não pode ser zero." position="top">
-                        <input type="number" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
                     </Tooltip>
                     <Tooltip text="Coeficiente linear. Afeta a posição do vértice da função modular." position="top">
-                        <input type="number" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                        <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
                     </Tooltip>
                 </div>
 

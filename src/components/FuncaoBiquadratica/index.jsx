@@ -13,15 +13,27 @@ export default function FuncaoBiquadratica() {
     const [c, setC] = useState('');
 
     const handleChangeA = (event) => {
-        setA(event.target.value);
+        let value = event.target.value;
+        value = value.replace(',', '.');
+        if (/^-?\d*\.?\d*$/.test(value)) {
+            setA(value);
+        }
     };
 
     const handleChangeB = (event) => {
-        setB(event.target.value);
+        let value = event.target.value;
+        value = value.replace(',', '.');
+        if (/^-?\d*\.?\d*$/.test(value)) {
+            setB(value);
+        }
     };
 
     const handleChangeC = (event) => {
-        setC(event.target.value);
+        let value = event.target.value;
+        value = value.replace(',', '.');
+        if (/^-?\d*\.?\d*$/.test(value)) {
+            setC(value);
+        }
     };
 
     // Texto para copiar em formato LaTeX
@@ -116,13 +128,13 @@ export default function FuncaoBiquadratica() {
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
                     <Tooltip text="Coeficiente de x⁴. Determina a abertura da curva. Não pode ser zero." position="top">
-                        <input type="number" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
                     </Tooltip>
                     <Tooltip text="Coeficiente de x². Afeta a forma da curva." position="top">
-                        <input type="number" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                        <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
                     </Tooltip>
                     <Tooltip text="Termo independente. Determina onde a curva cruza o eixo Y." position="top">
-                        <input type="number" id="c" className='valorC' placeholder='c' value={c} onChange={handleChangeC} />
+                        <input type="text" inputMode="decimal" id="c" className='valorC' placeholder='c' value={c} onChange={handleChangeC} />
                     </Tooltip>
                 </div>
 

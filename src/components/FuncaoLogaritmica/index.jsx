@@ -11,7 +11,11 @@ export default function FuncaoLogaritmica() {
     const [a, setA] = useState('');
 
     const handleChangeA = (event) => {
-        setA(event.target.value);
+        let value = event.target.value;
+        value = value.replace(',', '.');
+        if (/^-?\d*\.?\d*$/.test(value)) {
+            setA(value);
+        }
     };
 
     // Texto para copiar em formato LaTeX
@@ -71,7 +75,7 @@ export default function FuncaoLogaritmica() {
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
                     <Tooltip text="Base do logaritmo. Deve ser positiva e diferente de 1." position="top">
-                        <input type="number" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
                     </Tooltip>
                 </div>
 

@@ -12,11 +12,27 @@ export default function FuncaoPrimeiroGrau() {
     const [b, setB] = useState('');
 
     const handleChangeA = (event) => {
-        setA(event.target.value);
+        let value = event.target.value;
+
+        // troca vírgula por ponto
+        value = value.replace(',', '.');
+
+        // permite apenas números, -, e .
+        if (/^-?\d*\.?\d*$/.test(value)) {
+            setA(value);
+        }
     };
 
     const handleChangeB = (event) => {
-        setB(event.target.value);
+        let value = event.target.value;
+
+        // troca vírgula por ponto
+        value = value.replace(',', '.');
+
+        // permite apenas números, -, e .
+        if (/^-?\d*\.?\d*$/.test(value)) {
+            setB(value);
+        }
     };
 
     const [raiz, setRaiz] = useState('');
@@ -26,7 +42,7 @@ export default function FuncaoPrimeiroGrau() {
     const handleCalcular = () => {
         const aNum = parseFloat(a);
         const bNum = parseFloat(b);
-    
+
         if (isNaN(aNum) || isNaN(bNum)) {
             alert("Por favor, insira todos os valores corretamente.");
             return;
@@ -36,10 +52,10 @@ export default function FuncaoPrimeiroGrau() {
             alert("O coeficiente 'a' não pode ser zero.");
             return;
         }
-    
+
         // Cálculos
         const raizCalc = -bNum / aNum;
-    
+
         setCoeficienteAngular(aNum.toFixed(2).split('.').join(','));
         setCoeficienteLinear(bNum.toFixed(2).split('.').join(','));
         setRaiz(`x = ${raizCalc.toFixed(2).split('.').join(',')}`);
@@ -50,15 +66,27 @@ export default function FuncaoPrimeiroGrau() {
             <header>
                 <p ref={paragrafoRef} className='formula'>f(x) = {a || 'a'}x + {b || 'b'}</p>
             </header>
-            
+
             <CopyButton targetRef={paragrafoRef} />
 
             <div className="formulario">
 
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
-                    <input type="number" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
-                    <input type="number" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                    <input type="text"
+                        inputMode="decimal"
+                        id="a"
+                        className='valorA'
+                        placeholder='a'
+                        value={a}
+                        onChange={handleChangeA} />
+                    <input type="text"
+                        inputMode="decimal"
+                        id="b"
+                        className='valorB'
+                        placeholder='b'
+                        value={b}
+                        onChange={handleChangeB} />
                 </div>
 
                 <label className='label'>RESULTADOS</label>

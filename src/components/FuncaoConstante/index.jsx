@@ -11,7 +11,11 @@ export default function FuncaoConstante() {
     const [k, setK] = useState('');
 
     const handleChangeK = (event) => {
-        setK(event.target.value);
+        let value = event.target.value;
+        value = value.replace(',', '.');
+        if (/^-?\d*\.?\d*$/.test(value)) {
+            setK(value);
+        }
     };
 
     // Texto para copiar em formato LaTeX
@@ -53,7 +57,7 @@ export default function FuncaoConstante() {
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
                     <Tooltip text="Constante. Determina o valor fixo da função para qualquer x." position="top">
-                        <input type="number" id="k" className='valorK' placeholder='k' value={k} onChange={handleChangeK} />
+                        <input type="text" inputMode="decimal" id="k" className='valorK' placeholder='k' value={k} onChange={handleChangeK} />
                     </Tooltip>
                 </div>
 

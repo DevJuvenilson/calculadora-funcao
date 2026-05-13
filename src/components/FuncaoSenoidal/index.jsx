@@ -13,15 +13,27 @@ export default function FuncaoSenoidal() {
     const [c, setC] = useState('');
 
     const handleChangeA = (event) => {
-        setA(event.target.value);
+        let value = event.target.value;
+        value = value.replace(',', '.');
+        if (/^-?\d*\.?\d*$/.test(value)) {
+            setA(value);
+        }
     };
 
     const handleChangeB = (event) => {
-        setB(event.target.value);
+        let value = event.target.value;
+        value = value.replace(',', '.');
+        if (/^-?\d*\.?\d*$/.test(value)) {
+            setB(value);
+        }
     };
 
     const handleChangeC = (event) => {
-        setC(event.target.value);
+        let value = event.target.value;
+        value = value.replace(',', '.');
+        if (/^-?\d*\.?\d*$/.test(value)) {
+            setC(value);
+        }
     };
 
     // Texto para copiar em formato LaTeX
@@ -69,13 +81,13 @@ export default function FuncaoSenoidal() {
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
                     <Tooltip text="Deslocamento vertical. Define o centro da oscilação." position="top">
-                        <input type="number" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
+                        <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
                     </Tooltip>
                     <Tooltip text="Amplitude. Define a altura da onda. Quanto maior, mais intensa a oscilação." position="top">
-                        <input type="number" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
+                        <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
                     </Tooltip>
                     <Tooltip text="Frequência angular. Afeta a velocidade da oscilação. Não pode ser zero." position="top">
-                        <input type="number" id="c" className='valorC' placeholder='c' value={c} onChange={handleChangeC} />
+                        <input type="text" inputMode="decimal" id="c" className='valorC' placeholder='c' value={c} onChange={handleChangeC} />
                     </Tooltip>
                 </div>
 
