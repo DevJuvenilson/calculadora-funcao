@@ -150,13 +150,6 @@ Adoraríamos sua contribuição! Para contribuir:
 
 ---
 
-## 📋 Roadmap
-
-- [ ] Exportação de gráficos (PNG/PDF)
-- [ ] Suporte multilíngue
-
----
-
 ## 🐛 Reportar Bugs
 
 Encontrou um bug? Abra uma [issue](https://github.com/devjuvenilson/calculadora-funcao/issues) com:
