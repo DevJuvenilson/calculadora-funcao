@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRef } from 'react';
 import CopyButton from '../CopyButton';
 import Tooltip from '../Tooltip';
+import SignToggleButton from '../SignToggleButton';
 
 export default function FuncaoLogaritmica() {
     const paragrafoRef = useRef(null);
@@ -82,7 +83,7 @@ export default function FuncaoLogaritmica() {
                 <div className='valores'>
                     <Tooltip text="Base do logaritmo. Deve ser positiva e diferente de 1." position="top">
                         <div className='input-group'>
-                            <button type="button" className='toggle-sign' onClick={toggleSignA}>±</button>
+                            <SignToggleButton onClick={toggleSignA} disabled={a === ''} />
                             <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
                         </div>
                     </Tooltip>

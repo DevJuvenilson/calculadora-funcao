@@ -45,31 +45,6 @@
     gap: 8px;
 }
 
-.funcao-logaritmica .toggle-sign {
-    padding: 7px 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f5f5f5;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-    min-width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.funcao-logaritmica .toggle-sign:hover {
-    background-color: #e0e0e0;
-    border-color: #999;
-}
-
-.funcao-logaritmica .toggle-sign:active {
-    background-color: #d0d0d0;
-}
-
 .funcao-logaritmica .valores input[type="number"],
 .funcao-logaritmica .valores #a {
     width: 100%;

@@ -1,0 +1,48 @@
+.sign-toggle-button {
+    padding: 7px 12px;
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    background-color: #FFC107;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    min-width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.sign-toggle-button:hover:not(:disabled) {
+    background-color: #FFB300;
+    border-color: #FFA500;
+    transform: scale(1.05);
+}
+
+.sign-toggle-button:active:not(:disabled) {
+    background-color: #FF9800;
+    transform: scale(0.95);
+}
+
+.sign-toggle-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Modo escuro - mesma cor amarela para melhor nítidez */
+:root.dark-theme .sign-toggle-button {
+    background-color: #FFC107;
+    border: 1px solid #FFD700;
+    color: #333;
+}
+
+:root.dark-theme .sign-toggle-button:hover:not(:disabled) {
+    background-color: #FFB300;
+    border-color: #FFA500;
+}
+
+:root.dark-theme .sign-toggle-button:active:not(:disabled) {
+    background-color: #FF9800;
+}

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRef } from 'react';
 import CopyButton from '../CopyButton';
 import Tooltip from '../Tooltip';
+import SignToggleButton from '../SignToggleButton';
 
 export default function FuncaoConstante() {
     const paragrafoRef = useRef(null);
@@ -64,7 +65,7 @@ export default function FuncaoConstante() {
                 <div className='valores'>
                     <Tooltip text="Constante. Determina o valor fixo da função para qualquer x." position="top">
                         <div className='input-group'>
-                            <button type="button" className='toggle-sign' onClick={toggleSignK}>±</button>
+                            <SignToggleButton onClick={toggleSignK} disabled={k === ''} />
                             <input type="text" inputMode="decimal" id="k" className='valorK' placeholder='k' value={k} onChange={handleChangeK} />
                         </div>
                     </Tooltip>

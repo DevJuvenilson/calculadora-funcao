@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRef } from 'react';
 import CopyButton from '../CopyButton';
 import Tooltip from '../Tooltip';
+import SignToggleButton from '../SignToggleButton';
 
 export default function FuncaoPrimeiroGrau() {
     const paragrafoRef = useRef(null);
@@ -86,11 +87,11 @@ export default function FuncaoPrimeiroGrau() {
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
                     <div className='input-group'>
-                        <button type="button" className='toggle-sign' onClick={toggleSignA}>±</button>
+                        <SignToggleButton onClick={toggleSignA} disabled={a === ''} />
                         <input type="number" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
                     </div>
                     <div className='input-group'>
-                        <button type="button" className='toggle-sign' onClick={toggleSignB}>±</button>
+                        <SignToggleButton onClick={toggleSignB} disabled={b === ''} />
                         <input type="number" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
                     </div>
                 </div>

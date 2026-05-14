@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRef } from 'react';
 import CopyButton from '../CopyButton';
 import Tooltip from '../Tooltip';
+import SignToggleButton from '../SignToggleButton';
 
 export default function FuncaoTangente() {
     const paragrafoRef = useRef(null);
@@ -99,19 +100,19 @@ export default function FuncaoTangente() {
                 <div className='valores'>
                     <Tooltip text="Deslocamento vertical. Define o centro da função." position="top">
                         <div className='input-group'>
-                            <button type="button" className='toggle-sign' onClick={toggleSignA}>±</button>
+                            <SignToggleButton onClick={toggleSignA} disabled={a === ''} />
                             <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
                         </div>
                     </Tooltip>
                     <Tooltip text="Fator de escala. Afeta a inclinação das retas." position="top">
                         <div className='input-group'>
-                            <button type="button" className='toggle-sign' onClick={toggleSignB}>±</button>
+                            <SignToggleButton onClick={toggleSignB} disabled={b === ''} />
                             <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
                         </div>
                     </Tooltip>
                     <Tooltip text="Frequência angular. Afeta o espaçamento das assíntotas. Não pode ser zero." position="top">
                         <div className='input-group'>
-                            <button type="button" className='toggle-sign' onClick={toggleSignC}>±</button>
+                            <SignToggleButton onClick={toggleSignC} disabled={c === ''} />
                             <input type="text" inputMode="decimal" id="c" className='valorC' placeholder='c' value={c} onChange={handleChangeC} />
                         </div>
                     </Tooltip>

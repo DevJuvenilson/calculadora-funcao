@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRef } from 'react';
 import CopyButton from '../CopyButton';
 import Tooltip from '../Tooltip';
+import SignToggleButton from '../SignToggleButton';
 
 export default function FuncaoSegundoGrau() {
     const paragrafoRef = useRef(null);
@@ -111,19 +112,19 @@ export default function FuncaoSegundoGrau() {
                 <div className='valores'>
                     <Tooltip text="Coeficiente angular. Determina a abertura da parábola. Não pode ser zero." position="top">
                         <div className='input-group'>
-                            <button type="button" className='toggle-sign' onClick={toggleSignA}>±</button>
+                            <SignToggleButton onClick={toggleSignA} disabled={a === ''} />
                             <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
                         </div>
                     </Tooltip>
                     <Tooltip text="Coeficiente linear. Afeta a posição horizontal da parábola." position="top">
                         <div className='input-group'>
-                            <button type="button" className='toggle-sign' onClick={toggleSignB}>±</button>
+                            <SignToggleButton onClick={toggleSignB} disabled={b === ''} />
                             <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
                         </div>
                     </Tooltip>
                     <Tooltip text="Termo independente. Determina onde a parábola cruza o eixo Y." position="top">
                         <div className='input-group'>
-                            <button type="button" className='toggle-sign' onClick={toggleSignC}>±</button>
+                            <SignToggleButton onClick={toggleSignC} disabled={c === ''} />
                             <input type="text" inputMode="decimal" id="c" className='valorC' placeholder='c' value={c} onChange={handleChangeC} />
                         </div>
                     </Tooltip>

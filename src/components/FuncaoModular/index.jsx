@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRef } from 'react';
 import CopyButton from '../CopyButton';
 import Tooltip from '../Tooltip';
+import SignToggleButton from '../SignToggleButton';
 
 export default function FuncaoModular() {
     const paragrafoRef = useRef(null);
@@ -91,13 +92,13 @@ export default function FuncaoModular() {
                 <div className='valores'>
                     <Tooltip text="Coeficiente angular. Determina a inclinação da reta dentro do módulo. Não pode ser zero." position="top">
                         <div className='input-group'>
-                            <button type="button" className='toggle-sign' onClick={toggleSignA}>±</button>
+                            <SignToggleButton onClick={toggleSignA} disabled={a === ''} />
                             <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />
                         </div>
                     </Tooltip>
                     <Tooltip text="Coeficiente linear. Afeta a posição do vértice da função modular." position="top">
                         <div className='input-group'>
-                            <button type="button" className='toggle-sign' onClick={toggleSignB}>±</button>
+                            <SignToggleButton onClick={toggleSignB} disabled={b === ''} />
                             <input type="text" inputMode="decimal" id="b" className='valorB' placeholder='b' value={b} onChange={handleChangeB} />
                         </div>
                     </Tooltip>
