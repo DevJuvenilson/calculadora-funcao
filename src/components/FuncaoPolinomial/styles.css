@@ -1,0 +1,132 @@
+.funcao-polinomial input[type="text"]::-webkit-outer-spin-button,
+.funcao-polinomial input[type="text"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.funcao-polinomial input[type="text"] {
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.funcao-polinomial .formula {
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 100%;
+    font-size: 1.5em;
+    margin: 30px auto;
+    text-align: center;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.funcao-polinomial label {
+    color: #333;
+    margin: 10px 0px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.funcao-polinomial .valores {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    width: 100%;
+    gap: 10px;
+}
+
+.funcao-polinomial .input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}
+
+/* Desktop: esconder SignToggleButton */
+@media (min-width: 601px) {
+    .funcao-polinomial .input-group > button {
+        display: none;
+    }
+}
+
+.funcao-polinomial .valores input[type="text"],
+.funcao-polinomial .valores #a,
+.funcao-polinomial .valores #b,
+.funcao-polinomial .valores #c,
+.funcao-polinomial .valores #d,
+.funcao-polinomial .valores #e,
+.funcao-polinomial .valores #f {
+    width: 100%;
+    padding: 7px;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.funcao-polinomial .resultados {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 10px;
+}
+
+.funcao-polinomial #raizes,
+.funcao-polinomial #interseccaoY,
+.funcao-polinomial #extremos {
+    width: 100%;
+    padding: 7px;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+
+    .funcao-polinomial .valores,
+    .funcao-polinomial .resultados {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .funcao-polinomial .input-group {
+        width: 100%;
+    }
+
+    .funcao-polinomial #a,
+    .funcao-polinomial #b,
+    .funcao-polinomial #c,
+    .funcao-polinomial #d,
+    .funcao-polinomial #e,
+    .funcao-polinomial #f,
+    .funcao-polinomial #raizes,
+    .funcao-polinomial #interseccaoY,
+    .funcao-polinomial #extremos {
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .funcao-polinomial #raizes,
+    .funcao-polinomial #interseccaoY,
+    .funcao-polinomial #extremos {
+        font-size: 20px;
+    }
+}

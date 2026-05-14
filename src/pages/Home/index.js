@@ -27,6 +27,7 @@ function App() {
                             <option value="funcaoPrimeiroGrau">Função Afim</option>
                             <option value="funcaoSegundoGrau">Função Quadrática</option>
                             <option value="funcaoBiquadratica">Função Biquadrática</option>
+                            <option value="funcaoPolinomial">Função Polinomial</option>
                             <option value="funcaoExponencial">Função Exponencial</option>
                             <option value="funcaoLogaritmica">Função Logarítmica</option>
                             <option value="funcaoModular">Função Modular</option>
