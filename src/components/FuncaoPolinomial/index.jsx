@@ -147,28 +147,57 @@ export default function FuncaoPolinomial() {
             return;
         }
 
-        // Calcular raízes
-        const raizesEncontradas = [];
-        const tentativas = [];
-        for (let i = -10; i <= 10; i++) {
-            tentativas.push(i);
+        // Verificar se pelo menos um coeficiente principal é diferente de zero
+        if (aNum === 0 && bNum === 0 && cNum === 0 && dNum === 0 && eNum === 0 && fNum === 0) {
+            alert("Por favor, insira pelo menos um valor diferente de zero.");
+            return;
         }
 
-        for (let tentativa of tentativas) {
-            const raiz = encontrarRaizNewtonRaphson(tentativa, aNum, bNum, cNum, dNum, eNum, fNum);
-            const valor = avaliarPolinomio(raiz, aNum, bNum, cNum, dNum, eNum, fNum);
-            
-            if (Math.abs(valor) < 0.01) {
-                // Verificar se a raiz já foi encontrada
+        // Detectar mudanças de sinal para encontrar raízes
+        const raizesEncontradas = [];
+        const intervalo = 100;
+        const passos = 0.5;
+
+        // Primeira passagem: detectar mudanças de sinal e zeros exatos
+        for (let i = -intervalo; i < intervalo; i += passos) {
+            const x1 = i;
+            const x2 = i + passos;
+            const fx1 = avaliarPolinomio(x1, aNum, bNum, cNum, dNum, eNum, fNum);
+            const fx2 = avaliarPolinomio(x2, aNum, bNum, cNum, dNum, eNum, fNum);
+
+            // Função auxiliar para adicionar raiz sem duplicar
+            const adicionarRaiz = (raizEncontrada) => {
                 let jaExiste = false;
                 for (let r of raizesEncontradas) {
-                    if (Math.abs(r - raiz) < 0.1) {
+                    if (Math.abs(r - raizEncontrada) < 1e-3) {
                         jaExiste = true;
                         break;
                     }
                 }
                 if (!jaExiste) {
-                    raizesEncontradas.push(raiz);
+                    raizesEncontradas.push(raizEncontrada);
+                }
+            };
+
+            // Se bateu exatamente no zero no início do passo
+            if (Math.abs(fx1) < 1e-10) {
+                adicionarRaiz(x1);
+            }
+            
+            // Se bateu exatamente no zero no final do passo
+            if (Math.abs(fx2) < 1e-10) {
+                adicionarRaiz(x2);
+            }
+
+            // Se há mudança de sinal, há uma raiz neste intervalo (não exata)
+            if (fx1 * fx2 < 0) {
+                // Usar ponto médio como ponto inicial para Newton-Raphson
+                const ponto_inicial = (x1 + x2) / 2;
+                const raiz = encontrarRaizNewtonRaphson(ponto_inicial, aNum, bNum, cNum, dNum, eNum, fNum);
+                const valor = Math.abs(avaliarPolinomio(raiz, aNum, bNum, cNum, dNum, eNum, fNum));
+
+                if (valor < 1e-5) {
+                    adicionarRaiz(raiz);
                 }
             }
         }
@@ -178,6 +207,7 @@ export default function FuncaoPolinomial() {
         if (raizesEncontradas.length === 0) {
             raizesTexto = 'S = { }';
         } else {
+            raizesEncontradas.sort((a, b) => a - b);
             raizesTexto = 'S = {' + raizesEncontradas.map(r => r.toFixed(2).replace('.', ',')).join('; ') + '}';
         }
         setRaizes(raizesTexto);
@@ -187,20 +217,47 @@ export default function FuncaoPolinomial() {
 
         // Encontrar extremos locais (raízes da derivada)
         const extremosEncontrados = [];
-        for (let i = -10; i <= 10; i++) {
-            const extremo = encontrarRaizNewtonRaphson(i, 5 * aNum, 4 * bNum, 3 * cNum, 2 * dNum, eNum, 0);
-            const valorDerivada = avaliarDerivada(extremo, aNum, bNum, cNum, dNum, eNum);
-            
-            if (Math.abs(valorDerivada) < 0.01) {
-                let jaExiste = false;
-                for (let ex of extremosEncontrados) {
-                    if (Math.abs(ex - extremo) < 0.1) {
-                        jaExiste = true;
+        
+        for (let i = -intervalo; i < intervalo; i += passos) {
+            const x1 = i;
+            const x2 = i + passos;
+            const fpx1 = avaliarDerivada(x1, aNum, bNum, cNum, dNum, eNum);
+            const fpx2 = avaliarDerivada(x2, aNum, bNum, cNum, dNum, eNum);
+
+            // Se há mudança de sinal na derivada, há um extremo neste intervalo
+            if (fpx1 * fpx2 < 0) {
+                const ponto_inicial = (x1 + x2) / 2;
+                let x = ponto_inicial;
+                
+                // Método de Newton-Raphson para encontrar extremo
+                for (let j = 0; j < 100; j++) {
+                    const fpx = avaliarDerivada(x, aNum, bNum, cNum, dNum, eNum);
+                    const h = 0.0001;
+                    const fppx = (avaliarDerivada(x + h, aNum, bNum, cNum, dNum, eNum) - fpx) / h;
+                    
+                    if (Math.abs(fppx) < 1e-10) break;
+                    
+                    const xNovo = x - fpx / fppx;
+                    if (Math.abs(xNovo - x) < 1e-6) {
+                        x = xNovo;
                         break;
                     }
+                    x = xNovo;
                 }
-                if (!jaExiste) {
-                    extremosEncontrados.push(extremo);
+
+                const valorDerivada = Math.abs(avaliarDerivada(x, aNum, bNum, cNum, dNum, eNum));
+                
+                if (valorDerivada < 1e-4) {
+                    let jaExiste = false;
+                    for (let ex of extremosEncontrados) {
+                        if (Math.abs(ex - x) < 1e-3) {
+                            jaExiste = true;
+                            break;
+                        }
+                    }
+                    if (!jaExiste) {
+                        extremosEncontrados.push(x);
+                    }
                 }
             }
         }
@@ -220,7 +277,7 @@ export default function FuncaoPolinomial() {
 
                 <label className='label'>INSIRA OS VALORES</label>
                 <div className='valores'>
-                    <Tooltip text="Coeficiente de x⁵. Determina o comportamento geral da função. Não pode ser zero." position="top">
+                    <Tooltip text="Coeficiente de x⁵. Zere este valor para calcular polinômios de grau 4 ou inferior." position="top">
                         <div className='input-group'>
                             <SignToggleButton onClick={toggleSignA} disabled={a === ''} />
                             <input type="text" inputMode="decimal" id="a" className='valorA' placeholder='a' value={a} onChange={handleChangeA} />

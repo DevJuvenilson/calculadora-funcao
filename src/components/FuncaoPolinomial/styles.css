@@ -46,9 +46,9 @@
     gap: 8px;
 }
 
-/* Desktop: esconder SignToggleButton */
-@media (min-width: 601px) {
-    .funcao-polinomial .input-group > button {
+/* Desktop: esconder SignToggleButton em telas > 768px */
+@media (min-width: 769px) {
+    .funcao-polinomial .input-group>button {
         display: none;
     }
 }
@@ -75,7 +75,7 @@
 .funcao-polinomial .resultados {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: 10px auto;
     box-sizing: border-box;
@@ -104,6 +104,42 @@
     .funcao-polinomial .valores,
     .funcao-polinomial .resultados {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .funcao-polinomial .input-group {
+        width: 100%;
+    }
+
+    .funcao-polinomial #a,
+    .funcao-polinomial #b,
+    .funcao-polinomial #c,
+    .funcao-polinomial #d,
+    .funcao-polinomial #e,
+    .funcao-polinomial #f,
+    .funcao-polinomial #raizes,
+    .funcao-polinomial #interseccaoY,
+    .funcao-polinomial #extremos {
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .funcao-polinomial #raizes,
+    .funcao-polinomial #interseccaoY,
+    .funcao-polinomial #extremos {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .funcao-polinomial .valores {
+        flex-wrap: wrap;
+    }
+
+    .funcao-polinomial .valores,
+    .funcao-polinomial .resultados {
+        flex-direction: row;
         align-items: center;
     }
 
