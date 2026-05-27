@@ -1,176 +1,212 @@
-# 📐 GeiGebra - Calculadora de Funções
+# 📐 GeiGebra - Function Calculator
 
 <div align="center">
 
 ![GeiGebra Logo](./src/assets/img/logo-completa-geigebra.png)
 
-**Uma ferramenta interativa para visualizar e analisar funções matemáticas**
+**An interactive tool to visualize and analyze mathematical functions**
 
-[🚀 Acessar Aplicação](https://geigebra.netlify.app/) • [📝 Reportar Bug](https://github.com/devjuvenilson/calculadora-funcao/issues) • [💡 Sugerir Feature](https://github.com/devjuvenilson/calculadora-funcao/discussions)
+[🚀 Access Application](https://geigebra.netlify.app/) • [📝 Report Bug](https://github.com/devjuvenilson/calculadora-funcao/issues) • [💡 Suggest Feature](https://github.com/devjuvenilson/calculadora-funcao/discussions)
 
 </div>
 
 ---
 
-## 🎯 Sobre o Projeto
+## 🎯 About the Project
 
-**GeiGebra** é uma calculadora de funções online desenvolvida para ajudar **estudantes de ensino médio e superior** a visualizar, compreender e validar seus cálculos matemáticos de forma rápida e intuitiva.
+**GeiGebra** is an online function calculator developed to help **high school and university students** visualize, understand, and validate their mathematical calculations quickly and intuitively.
 
-Com uma interface amigável e integração com o **Desmos Graph API**, a aplicação permite que os usuários:
-- Visualizem gráficos de funções em tempo real
-- Calculem raízes de diversas funções como do 1º e 2º grau
-- Explorem comportamentos de funções interativamente
-- Validem respostas de tarefas e provas
-
----
-
-## ✨ Principais Funcionalidades
-
-✅ **Calculadora de Funções do 1º Grau** - Resolva equações lineares e visualize o comportamento
-
-✅ **Calculadora de Funções do 2º Grau** - Encontre vértices, raízes e represente parábolas
-
-✅ **Gráficos Interativos** - Visualização dinâmica com o Desmos Calculator
-
-✅ **Interface Responsiva** - Acesso completo em desktop, tablet e mobile
-
-✅ **Cálculos Instantâneos** - Resultados em tempo real conforme digita
-
-✅ **Design Intuitivo** - UX pensada para estudantes
+With a user-friendly interface and integration with the **Desmos Graph API**, the application allows users to:
+- Visualize function graphs in real time
+- Calculate roots of various functions such as first and second-degree
+- Explore function behaviors interactively
+- Validate answers for assignments and tests
 
 ---
 
-## 🛠️ Stack Tecnológico
+## ✨ Key Features
 
-| Tecnologia | Uso |
-|-----------|-----|
-| **React 19** | Framework principal |
-| **React DOM 19** | Renderização de componentes |
-| **Desmos API v1.8** | Gráficos matemáticos interativos |
-| **CSS3** | Estilização e responsividade |
-| **JavaScript ES6+** | Lógica da aplicação |
+✅ **Multiple Function Types** - Support for 11+ function types including linear, quadratic, polynomial, exponential, logarithmic, trigonometric, and more
+
+✅ **Interactive Graphs** - Dynamic visualization with Desmos Calculator
+
+✅ **Instant Calculations** - Real-time results as you type
+
+✅ **Mathematical Formula Rendering** - LaTeX-style formula display for clear mathematical notation
+
+✅ **Theme Toggle** - Light and dark mode support for comfortable viewing
+
+✅ **Responsive Interface** - Full access on desktop, tablet, and mobile
+
+✅ **Copy Results** - One-click copying of calculation results
+
+✅ **Intuitive Design** - UX designed for students
 
 ---
 
-## 🚀 Como Usar
+## 🛠️ Tech Stack
 
-### Opção 1: Acessar Online (Recomendado)
+| Technology | Usage |
+|-----------|-------|
+| **React 19** | Main framework |
+| **React DOM 19** | Component rendering |
+| **Desmos API v1.8** | Interactive mathematical graphs |
+| **CSS3** | Styling and responsiveness |
+| **JavaScript ES6+** | Application logic |
 
-Visite **[geigebra.netlify.app](https://geigebra.netlify.app/)** e comece a usar imediatamente!
+---
 
-### Opção 2: Executar Localmente
+## � Supported Function Types
 
-#### Pré-requisitos
-- Node.js v14+ instalado
-- npm ou yarn
+The calculator supports a wide range of mathematical functions:
 
-#### Instalação
+- **First-Degree Functions** - Linear equations (f(x) = ax + b)
+- **Second-Degree Functions** - Quadratic equations (f(x) = ax² + bx + c)
+- **Biquadratic Functions** - Fourth-degree equations
+- **Polynomial Functions** - Higher degree polynomials
+- **Exponential Functions** - Exponential growth and decay
+- **Logarithmic Functions** - Logarithmic curves
+- **Trigonometric Functions** - Sine, cosine, and tangent
+- **Constant Functions** - Horizontal lines
+- **Modular Functions** - Absolute value functions
+
+---
+
+## �🚀 How to Use
+
+### Option 1: Access Online (Recommended)
+
+Visit **[geigebra.netlify.app](https://geigebra.netlify.app/)** and start using immediately!
+
+### Option 2: Run Locally
+
+#### Prerequisites
+- Node.js v14+ installed
+- npm or yarn
+
+#### Installation
 
 ```bash
-# Clone o repositório
+# Clone the repository
 git clone https://github.com/devjuvenilson/calculadora-funcao.git
 cd calculadora-funcao
 
-# Instale as dependências
+# Install dependencies
 npm install
 
-# Configure as variáveis de ambiente
-# Crie um arquivo .env na raiz do projeto:
-echo "REACT_APP_DESMOS_API_KEY=sua_chave_aqui" > .env
+# Configure environment variables
+# Create a .env file in the project root:
+echo "REACT_APP_DESMOS_API_KEY=your_key_here" > .env
 
-# Inicie o servidor de desenvolvimento
+# Start the development server
 npm start
 ```
 
-A aplicação abrirá em `http://localhost:3000`
+The application will open at `http://localhost:3000`
 
-#### Build para Produção
+#### Build for Production
 
 ```bash
 npm run build
 ```
 
-O bundle otimizado será gerado na pasta `build/`
+The optimized bundle will be generated in the `build/` folder
 
 ---
 
-## 📦 Estrutura do Projeto
+## 📦 Project Structure
 
 ```
 calculadora-funcao/
 ├── public/
-│   └── index.html              # HTML principal
+│   └── index.html              # Main HTML
 ├── src/
 │   ├── components/
-│   │   ├── FuncaoPrimeiroGrau/ # Calculadora de funções lineares
-│   │   ├── FuncaoSegundoGrau/  # Calculadora de funções quadráticas
-│   │   ├── DesmosGraph/        # Integração com Desmos API
-│   │   ├── BotaoCalcular/      # Componente de botão reutilizável
-│   │   └── CopyButton/         # Botão de cópia de resultados
+│   │   ├── FuncaoPrimeiroGrau/ # Linear functions calculator
+│   │   ├── FuncaoSegundoGrau/  # Quadratic functions calculator
+│   │   ├── FuncaoBiquadratica/ # Biquadratic functions calculator
+│   │   ├── FuncaoPolinomial/   # Polynomial functions calculator
+│   │   ├── FuncaoExponencial/  # Exponential functions calculator
+│   │   ├── FuncaoLogaritmica/  # Logarithmic functions calculator
+│   │   ├── FuncaoSenoidal/     # Sine function calculator
+│   │   ├── FuncaoCossenoidal/  # Cosine function calculator
+│   │   ├── FuncaoTangente/     # Tangent function calculator
+│   │   ├── FuncaoConstante/    # Constant function calculator
+│   │   ├── FuncaoModular/      # Modular function calculator
+│   │   ├── DesmosGraph/        # Desmos API integration for graph visualization
+│   │   ├── BotaoCalcular/      # Reusable button component
+│   │   ├── CopyButton/         # Copy results button component
+│   │   ├── SignToggleButton/   # Toggle button for sign operations
+│   │   ├── ThemeToggle/        # Light/dark theme toggle
+│   │   └── Tooltip/            # Tooltip component for help text
+│   ├── context/
+│   │   └── ThemeContext.jsx     # Global theme context for light/dark modes
 │   ├── pages/
-│   │   └── Home/               # Página principal
+│   │   └── Home/               # Main application page
 │   ├── services/
-│   │   └── FormulaRender.jsx    # Renderização de fórmulas matemáticas
-│   ├── assets/                 # Imagens e ícones
-│   └── index.js                # Ponto de entrada
-├── .env                        # Variáveis de ambiente (não commitar)
+│   │   └── FormulaRender.jsx    # Mathematical formula rendering utility
+│   ├── styles/
+│   │   └── darkTheme.css        # Dark theme stylesheet
+│   ├── assets/                 # Images and icons
+│   └── index.js                # Application entry point
+├── .env                        # Environment variables (do not commit)
 ├── package.json
 └── README.md
 ```
 
 ---
 
-## 🔒 Segurança
+## 🔒 Security
 
-A API Key do Desmos é carregada dinamicamente através de variáveis de ambiente (`REACT_APP_DESMOS_API_KEY`), garantindo:
+The Desmos API Key is loaded dynamically through environment variables (`REACT_APP_DESMOS_API_KEY`), ensuring:
 
-- ✅ Proteção da chave em repositórios públicos
-- ✅ Diferentes chaves para ambientes de dev e produção
-- ✅ Carregamento seguro em tempo de build
+- ✅ Key protection in public repositories
+- ✅ Different keys for dev and production environments
+- ✅ Secure loading at build time
 
-**Nunca** commite o arquivo `.env` com valores reais. Use `.env.example` como template.
-
----
-
-## 🤝 Como Contribuir
-
-Adoraríamos sua contribuição! Para contribuir:
-
-1. **Fork** o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um **Pull Request**
-
-### Diretrizes
-- Código limpo e bem comentado
-- Testes para novas funcionalidades
-- Siga o padrão de estilo do projeto
-- Atualize o README se necessário
+**Never** commit the `.env` file with real values. Use `.env.example` as a template.
 
 ---
 
-## 🐛 Reportar Bugs
+## 🤝 How to Contribute
 
-Encontrou um bug? Abra uma [issue](https://github.com/devjuvenilson/calculadora-funcao/issues) com:
-- Descrição clara do problema
-- Passos para reproduzir
-- Screenshots (se aplicável)
-- Ambiente (SO, navegador, versão)
+We'd love your contribution! To contribute:
+
+1. **Fork** the project
+2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a **Pull Request**
+
+### Guidelines
+- Clean and well-commented code
+- Tests for new features
+- Follow the project's code style
+- Update the README if necessary
 
 ---
 
-## 📄 Licença
+## 🐛 Report Bugs
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+Found a bug? Open an [issue](https://github.com/devjuvenilson/calculadora-funcao/issues) with:
+- Clear description of the problem
+- Steps to reproduce
+- Screenshots (if applicable)
+- Environment (OS, browser, version)
 
 ---
 
-## 👨‍💻 Desenvolvedor
+## 📄 License
 
-Desenvolvido para a comunidade estudantil
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-**Contato & Redes:**
+---
+
+## 👨‍💻 Developer
+
+Developed for the student community
+
+**Contact & Networks:**
 - GitHub: [@DevJuvenilson](https://github.com/DevJuvenilson)
 - LinkedIn: [Juvenilson](https://linkedin.com/in/juvenilsondaniel)
 
@@ -178,6 +214,6 @@ Desenvolvido para a comunidade estudantil
 
 <div align="center">
 
-**⭐ Se este projeto foi útil, considere dar uma estrela!**
+**⭐ If this project was helpful, please consider giving it a star!**
 
 </div>
